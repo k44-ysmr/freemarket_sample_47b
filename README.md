@@ -12,12 +12,8 @@ Rails 5.2.2.1
 # Database
 ## users TB
 
-| Left align | Right align | Center align |
+| Column | Type | Options |
 |:-----------|------------:|:------------:|
-| This | This | This |
-| column | column | column |
-| will | will | will |
-| be | be | be |
-| left | right | center |
-| aligned | aligned | aligned |
-
+| nickname | string | null: false |
+| email | string | null: false, unique: true |
+| password | string | -- |
