@@ -23,8 +23,8 @@ Rails 5.2.2.1
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 | name | string	| null: false, index: true |
+| description	| string | null: false |
 | price	| integer |	null: false
-| description	| text | null: false |
 | condition	| integer |	null: false |
 | shipping_fee | integer | null: false |
 | shipping_from |	integer |	null: false |
