@@ -35,3 +35,28 @@ Rails 5.2.2.1
 | category_id | references | null: false, index: true, foreign_key: true |
 | user_id | references | null: false, index: true, foreign_key: true |
 | size_id | references | null: false, index: true, foreign_key: true |
+
+## brands TB
+
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| name | string | null: false, unique: true |
+| brand_group_id | references | index: true, foreign_key: true |
+
+## brand_groups TB
+
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| name | string | null: false, unique: true |
+
+## categories TB
+
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| name | string | null: false, unique: true |
+
+## sizes TB
+
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| name | string | null: false, unique: true |
