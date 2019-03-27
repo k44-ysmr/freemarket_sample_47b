@@ -12,7 +12,6 @@ Rails 5.2.2.1
 # Database
 ## users TB
 
-
 | Left align | Right align | Center align |
 |:-----------|------------:|:------------:|
 | This | This | This |
