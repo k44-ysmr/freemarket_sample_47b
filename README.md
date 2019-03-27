@@ -10,4 +10,8 @@ Rails 5.2.2.1
 2019/03/27-04/20
 
 # Database
-?
+## users TB
+|column|type|option|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|--|
