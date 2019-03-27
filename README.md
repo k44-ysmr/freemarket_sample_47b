@@ -12,7 +12,7 @@ Rails 5.2.2.1
 # Database
 ## users TB
 
-|column|type|option|
-|nickname|string|null: false|
-|email|string|null: false, unique: true|
-|password|string|--|
+|column |type |option |
+|nickname |string |null: false |
+|email |string |null: false, unique: true |
+|password |string |-- |
