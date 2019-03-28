@@ -60,3 +60,12 @@ Rails 5.2.2.1
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 | name | string | null: false, unique: true |
+
+## size_chart TB
+
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| name | string | null: false, unique: true |
+| category_id | references | null: false, index: true, foreign_key: true |
+| size_id | references | null: false, index: true, foreign_key: true |
+
