@@ -87,7 +87,6 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'enum_help'
 gem "kaminari"
-gem 'font-awesome-sass', '~> 5.8.1'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rspec-rails', '~> 3.5'
