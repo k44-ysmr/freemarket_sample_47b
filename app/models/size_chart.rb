@@ -1,0 +1,2 @@
+class SizeChart < ApplicationRecord
+end
