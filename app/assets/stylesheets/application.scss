@@ -3,8 +3,11 @@
 @import 'mixin/mixin';
 @import 'modules/common';
 
-@import 'modules/header';
-@import 'modules/footer';
-@import 'modules/items';
-@import 'modules/users';
+@import 'modules/banner';
+@import 'modules/card';
 @import 'modules/categories';
+@import 'modules/footer';
+@import 'modules/header';
+@import 'modules/items';
+@import 'modules/sell-btn';
+@import 'modules/users';
