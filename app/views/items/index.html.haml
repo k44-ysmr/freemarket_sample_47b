@@ -1,4 +1,32 @@
 -# ページタイトル
 - content_for(:title) { 'メルカリ サンプル' }
 
-%i.fab.fa-accessible-icon
+/ ヘッダー
+%header.header
+  = render partial: "partial/header"
+/ パンくずリスト
+/ バナースライド
+.swiper
+= image_tag 'common/banner-new-register.jpg', alt: 'app-logo', class: 'banner__container--left__icon__app', height: '400', width: '100%'
+/ メインコンテンツ
+%main.main
+.pickup
+  %h2.pickup-top ピックアップカテゴリー
+  = render partial: 'partial/item-top'
+  = render partial: 'partial/item-top'
+  = render partial: 'partial/item-top'
+  = render partial: 'partial/item-top'
+.pickup
+  %h2.pickup-top ピックアップブランド
+  = render partial: 'partial/item-top'
+  = render partial: 'partial/item-top'
+  = render partial: 'partial/item-top'
+  = render partial: 'partial/item-top'
+/ バナー
+.banner
+  = render partial: "partial/banner"
+/ フッター
+%footer.footer
+  = render partial: "partial/footer"
+/ 出品ボタン
+= render partial: "partial/sell-btn"
