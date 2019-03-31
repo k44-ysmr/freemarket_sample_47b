@@ -1,3 +1,7 @@
+- content_for(:title) { '出品 - メルカリ サンプル' }
+.devise-header
+  = render partial: 'partial/devise-header'
+
 .sell
   %main.sell-main
     %section.sell-main__container
@@ -157,6 +161,8 @@
               出品する
             %a.sell-btn-box__out もどる
 
+.devise-footer
+  = render partial: 'partial/devise-footer'
 
 
 
