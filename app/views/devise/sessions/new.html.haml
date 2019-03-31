@@ -6,7 +6,7 @@
   .devise-main__session
     .devise-main__session__registration
       %p.devise-main__session__registration__head アカウントをお持ちでない方はこちら
-      =link_to '新規会員登録', new_user_registration_path, class: 'devise-main__session__registration__link'
+      =link_to '新規会員登録', users_path, class: 'devise-main__session__registration__link'
 
     .devise-main__session__omniauth
       = link_to '', class: 'devise-main__session__omniauth__facebook' do
