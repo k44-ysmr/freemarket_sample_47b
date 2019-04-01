@@ -11,7 +11,7 @@
         %section.buy-content
           .buy-content__inner
             %h3.buy-content-image
-              %img.buy-content-image__file{ alt: "", "data-src": "https://static.mercdn.net/thumb/photos/m10925107469_1.jpg?1553928587", src: "https://static.mercdn.net/thumb/photos/m10925107469_1.jpg?1553928587"}
+              = image_tag 'https://static.mercdn.net/thumb/photos/m10925107469_1.jpg?1553928587', alt: '', class: 'buy-content-image__file'
             %p.buy-content__inner__bold 横向きの女性！（選択した商品名を表示）
 
             %form.buy-content__inner__form{ action: "", method: "POST", }
@@ -44,6 +44,7 @@
                           一部のポイントを使う
                       %input.input-default-spinoff{"data-buy": "part_num", "data-input": "money", placeholder: "使うポイントを入力", type: "number", value: ""}/
                       %input{"data-buy": "result", name: "consume_point", type: "hidden", value: ""}/
+
               %ul.buy-cost
                 %li.buy-cost__inner.bold
                   .buy-cost__inner__left 支払い金額
@@ -69,7 +70,7 @@
             %br/
             ねずみ　太郎
           %p.buy-user-info__inner__text
-          %a.buy-user-info__inner__fix{href: ""}
+          = link_to '#', class: 'buy-user-info__inner__fix' do
             %span 変更する
             %i.far.fa-angle-right
 
@@ -81,11 +82,10 @@
             \/
           %figure
             %img クレカの画像？
-          %p
-          %a.buy-user-info__inner__fix{href: ""}
+          %p.buy-user-info__inner__text
+          = link_to '#', class: 'buy-user-info__inner__fix' do
             %span 変更する
             %i.far.fa-angle-right
-
 
 .devise-footer
   = render partial: 'partial/devise-footer'
