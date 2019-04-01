@@ -16,6 +16,8 @@
 # group is considered to be the first unless any hosts have the primary
 # property set. Specify the username and a domain or IP for the server.
 server '13.113.69.245', user: 'ec2-user', roles: %w{app db web}
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
 # Don't use `:all`, it's a meta role.
 
 # role :app, %w{deploy@example.com}, my_property: :my_value
