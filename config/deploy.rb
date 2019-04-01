@@ -23,3 +23,10 @@ set :default_env, {
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
 }
 
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
+
