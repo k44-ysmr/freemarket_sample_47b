@@ -6,7 +6,7 @@ set :repo_url,  'git@github.com:yotuba088/freemarket_sample_47b.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
-set :linked_files, 'config/database.yml', 'config/master.key'
+append :linked_files, 'config/database.yml', 'config/master.key'
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1'
