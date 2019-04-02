@@ -1,0 +1,91 @@
+- content_for(:title) { '出品 - メルカリ サンプル' }
+
+.devise-header
+  = render partial: 'partial/devise-header'
+
+.sell
+  %main.sell-main
+    %section.sell-main__container
+      .sell-main__inner
+        %h2.form-title 購入を確定しますか？
+        %section.buy-content
+          .buy-content__inner
+            %h3.buy-content-image
+              = image_tag 'https://static.mercdn.net/thumb/photos/m10925107469_1.jpg?1553928587', alt: '', class: 'buy-content-image__file'
+            %p.buy-content__inner__bold 横向きの女性！（選択した商品名を表示）
+
+            %form.buy-content__inner__form{ action: "", method: "POST", }
+              %p.buy-price
+                ¥ -,---
+                %span.buy-price__shipping 送料込み
+
+                / accordion
+              %ul.buy-accordion
+                %li.buy-accordion__inner
+                  .buy-accordion__inner__btn
+                    ポイントを使う
+                    %i.fas.fa-chevron-down
+                  %ul.buy-accordion__inner__down
+                    %li.bold 所持ポイント: P 1,000
+                    %li.buy-form-group{"data-buy": "parent", style: "margin: 0;"}
+                      .radio-default
+                        %label.radio-label
+                          %input.radio-label__choice{"data-buy": "none", name: "consume_point_radio", type: "radio", value: "none"}>/
+                          ポイントを使わない
+                      .radio-default
+                        %label.radio-label
+                          %input.radio-label__choice{"data-buy": "all", name: "", type: "radio", value: ""}/
+                          %input.radio-label__choice{type: "hidden", value: ""}/
+                          すべてのポイントを使う
+                          .remaining-point P 1,000
+                      .radio-default
+                        %label.radio-label
+                          %input.radio-label__choice{"data-buy": "part", name: "", type: "radio", value: "partial"}/
+                          一部のポイントを使う
+                      %input.input-default-spinoff{"data-buy": "part_num", "data-input": "money", placeholder: "使うポイントを入力", type: "number", value: ""}/
+                      %input{"data-buy": "result", name: "consume_point", type: "hidden", value: ""}/
+
+              %ul.buy-cost
+                %li.buy-cost__inner.bold
+                  .buy-cost__inner__left 支払い金額
+                  .buy-cost__inner__right
+                    %span{"data-buy-pay": "2500"} ¥ 200,500
+              / %input{name: "seller_id", type: "hidden", value: ""}/
+              / %input{name: "payment_fee", type: "hidden", value: "0"}/
+              / %input{name: "payment_amount", type: "hidden", value: "2500"}/
+
+              / error
+              %p.buy-error-text 配送先と支払い方法の入力を完了してください。
+              %button.buy-btn.bold{disabled: "disabled", type: "submit"} 購入する
+              %input#user_info_is_not_complete{type: "hidden"}/
+
+      %section.buy-user-info
+        .buy-user-info__inner
+          %h3.bold 配送先
+          %address.buy-user-info__inner__text
+            〒123-4567
+            %br/
+            東京都 ネズミの国は千葉県
+            7-7-777
+            %br/
+            ねずみ　太郎
+          %p.buy-user-info__inner__text
+          = link_to '#', class: 'buy-user-info__inner__fix' do
+            %span 変更する
+            %i.far.fa-angle-right
+
+      %section.buy-user-info{"data-buy": "pay-method"}
+        .buy-user-info__inner
+          %h3 支払い方法
+          %p.buy-user-info__inner__text
+            %br/
+            \/
+          %figure
+            %img クレカの画像？
+          %p.buy-user-info__inner__text
+          = link_to '#', class: 'buy-user-info__inner__fix' do
+            %span 変更する
+            %i.far.fa-angle-right
+
+.devise-footer
+  = render partial: 'partial/devise-footer'
