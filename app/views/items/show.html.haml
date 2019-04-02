@@ -1,0 +1,207 @@
+/ ヘッダー
+%header.header
+  = render partial: "partial/header"
+/ パンくずリスト
+/ バナースライド
+
+
+%section.item-box-cotainer
+  %h1.item-name すごい靴
+  .item-main-content
+    .item-photo
+      .item-photo__box
+        .item-photo__box__outer
+          .owl-stage{:style => "left: 0px; width: 2100px;"}
+            .owl-item.active{:style => "width: 300px;"}
+              .owl-item-inner.is-higher-height
+                = image_tag 'common/sample_shoe.jpg', alt: '商品画像'
+        / .owl-nav.disabled
+        /   .owl-prev
+        /   .owl-next
+        .owl-dots
+          .owl-dots__active
+            %span
+            .owl-dot__active__inner
+              = image_tag 'common/sample_shoe.jpg', alt: '商品画像'
+          .owl-dot
+            %span
+            .owl-dot-inner
+              = image_tag 'common/sample_shoe.jpg', alt: '商品画像'
+          .owl-dot
+            %span
+            .owl-dot-inner
+              = image_tag 'common/sample_shoe.jpg', alt: '商品画像'
+
+
+
+    %table.item-detail-table
+      %tbody
+        %tr
+          %th 出品者
+          %td
+            %a{:href => ""} ユーザー
+            %div
+              .item-user-ratings
+                %i.fas.fa-laugh
+                %span 52
+              .item-user-ratings
+                %i.fas.fa-meh
+                %span 0
+              .item-user-ratings
+                %i.fas.fa-frown-open
+                %span 0
+        %tr
+          %th カテゴリー
+          %td
+            %a{:href => ""}
+              %div メンズ
+            %a{:href => ""}
+              .item-detail-table-sub-category
+                %i.fas.fa-chevron-right
+                シューズ
+            %a{:href => ""}
+              .item-detail-table-sub-sub-category
+                %i.fas.fa-chevron-right
+                シューズ
+        %tr
+          %th ブランド
+          %td
+            %a{:href => ""}
+              %div SUGOI
+        %tr
+          %th 商品の状態
+          %td やや傷や汚れあり
+        %tr
+          %th 配送料の負担
+          %td 送料込み(出品者負担)
+        %tr
+          %th 配送の方法
+          %td ゆうゆうメルカリ便
+        %tr
+          %th 配送元地域
+          %td
+            %a 東京都
+        %tr
+          %th 発送日の目安
+          %td 1~2日で発送
+
+    .item-price-box.text-center
+      %span.item-price ¥ 3,510
+      %span.item-tax (税込)
+      %span.item-shipping-fee 送料込み
+    %a.item-buy-btn 購入画面に進む
+    .item-description
+      %p.item-description_inner
+      すごい靴です。
+      %br
+      とにかくすごいです。
+      %br
+      すごいものはすごいんです。
+    .item-button-container
+      .item-button-left
+        %button.item-button.item-button-like
+          %i.fas.fa-heart
+          %span いいね!
+          %span.fade-in-down 0
+        %a.item-button.item-button-report
+          %i.fas.fa-flag
+          %span 不適切な商品の報告
+        / %input
+      .item-button-right
+        %a{:href => "https://"}
+          %i.fas.fa-lock
+          %span あんしん・あんぜんへの取り組み
+.item-detail-message
+  .item-detail-message__container
+    .item-detail-message__view
+      %ul.message-items
+        %li.message
+          %a.message-user{:href => ""}
+            %figure
+              .message-user__photo
+                = image_tag 'common/sample_shoe.jpg', alt: '商品画像'
+              %figcaption.bold
+                ユーザー
+          .message-body
+            .message-body-text
+              コメント失礼します。
+              %br/
+              すごいとはどのようにすごいのですか？
+            .message-icons
+              %time.message-icon-left
+                %i.fas.fa-clock
+                %span 9 時間前
+              .message-icon-right
+                %form{}
+                  %button{:type => "submit"}
+                    %i.fas.fa-flag
+                  %input{:type => "hidden"}/
+            %i.fas.fa-balloon
+
+    .item-detail-message_content
+      %form.message-form
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
+        %button.message-submit.btn-default.btn-gray{:type => "submit"}
+          %span コメントする
+
+%ul.nav-item-link-prev-next
+  %li.nav-item-link_prev
+    %a{:href => ""}
+      %i.fas.fa-chevron-left
+      すごい靴
+  %li.nav-item-link_right
+    %a{:href => ""}
+      すごい靴
+      %i.fas.fa-chevron-right
+
+
+.item-social-media-box
+  .text-center
+    .fb-save.fb_iframe_widget{}
+      %span{:style => ""}
+        %iframe{:style => "border: none; width: 0px; height: 0px;",}
+  %ul.social-media-box
+    %li
+      %a.share-btn{}
+        %i.fas.fa-facebook-square
+    %li
+      %a.share-btn{}
+        %i.fas.fa-twitter-square
+    %li
+      %a.share-btn{}
+        %i.fas.fa-line
+    %li
+      %a.share-btn{}
+        %i.fas.fa-pinterest-square
+
+
+.items-in-user-profile
+  %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
+    %h2.items-box-head
+      %a{:href => ""} ユーザーさんのその他の出品
+    .items-box-content.clearfix
+      %section.items-box
+        = render partial: 'partial/card'
+      %section.items-box2
+        = render partial: 'partial/card'
+      %section.items-box3
+        = render partial: 'partial/card'
+  %section.items-box-container.clearfix.items-box-overflow
+    %h2.items-box-head
+      %a{:href => ""}
+        メンズのシューズ その他の商品
+    .items-box-content.clearfix
+      %section.items-box
+        = render partial: 'partial/card'
+      %section.items-box2
+        = render partial: 'partial/card'
+      %section.items-box3
+        = render partial: 'partial/card'
+/ バナー
+.banner
+  = render partial: "partial/banner"
+/ フッター
+%footer.footer
+  = render partial: "partial/footer"
+
