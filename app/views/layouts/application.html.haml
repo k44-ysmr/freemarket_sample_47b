@@ -19,7 +19,4 @@
       }
 
   %body
-    - if @none_breadcrumbs_flag.blank?
-      %nav.bread-container
-        = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fas fa-chevron-right')}"
     = yield
