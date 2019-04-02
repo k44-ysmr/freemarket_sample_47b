@@ -42,7 +42,7 @@ body {
           position: relative;;
           overflow: hidden;
         }
-        .owl-dots {
+        .item-photo-dots {
           line-height: 0;
           &__active {
             opacity: 1;
@@ -53,7 +53,7 @@ body {
             position: relative;
             overflow: hidden;
             display: inline-block;
-            .owl-dot__active__inner {
+            &__inner {
               position: static;
               width: auto;
               height: auto;
@@ -64,7 +64,7 @@ body {
               }
             }
           }
-          .owl-dot {
+          &__passive {
             opacity: .4;
             width: 75px;
             height: 75px;
@@ -72,7 +72,7 @@ body {
             position: relative;
             overflow: hidden;
             display: inline-block;
-            .owl-dot-inner {
+            &__inner {
               position: static;
               width: auto;
               height: auto;
@@ -113,8 +113,8 @@ body {
               margin: 0;
               color: $light-blue;
             }
-            div {
-              .item-user-ratings {
+            .item-information {
+              &__user-ratings {
                 margin: 8px 0 0 16px;
                 display: inline-block;
                 i {
@@ -132,7 +132,7 @@ body {
                 }
               }
             }
-            .item-detail-table-sub-category {
+            &__sub-category {
               margin: 0;
             }
           }
@@ -140,18 +140,18 @@ body {
       }
     }
 
-    .item-price-box.text-center {
+    .item-price-box {
       margin: 24px 0 0;
       text-align: center;
-      .item-price {
+      &__price {
         margin: 0 16px 0 0;
         font-size: 50px;
         font-weight: 600;
       }
-      .item-tax {
+      &__item-tax {
         font-size: 10px;
       }
-      .item-shipping-fee {
+      &__fee {
         display: inline-block;
         font-size: 16px;
       }
@@ -174,22 +174,22 @@ body {
       padding: 32px 0 0;
       line-height: 1.5;
       font-size: 18px;
-      .item-description_inner {
+      &__inner {
         white-space: pre-wrap;
       }
     }
 
-    .item-button-container {
+    .share-container {
       margin: 16px 0 0;
       font-size: 0;
       height: 33px;
 
-      .item-button-left {
+      &__left {
         float: left;
         display: inline-block;
         padding: 8px 16px;
         border-radius: 40px;
-        .item-button.item-button-like {
+        &__like {
           color: $black;
           background-color: $gray-back;
           display: inline-block;
@@ -206,7 +206,7 @@ body {
             vertical-align: middle;
           }
         }
-        .item-button.item-button-report {
+        &__report {
           display: inline-block;
           margin: 0 0 0 16px;
           color: $black;
@@ -226,7 +226,7 @@ body {
           }
         }
       }
-      .item-button-right {
+      &__right {
         margin: 8px 0 0;
         float: right;
         a {
@@ -247,28 +247,28 @@ body {
       }
     }
 
-.item-detail-message {
+.item-comment {
   width: 700px;
   margin: 8px auto;
-}
-  .item-detail-message__container {
+
+  &__container {
     background-color: $white;
-    .item-detail-message__view{
+    &__view{
       padding: 24px;
       height: 200px;
-      .message-items {
+      .message {
         margin: 0;
-        .message {
+        &__content {
           margin: 1.5em 0 0;
-          .message-user {
+          &__user {
             float: left;
             position: relative;
             top: -20px;
             display: inline-block;
             margin: 0;
             padding: 0;
-            figure {
-              .message-user__photo {
+            .message-user {
+              &__photo {
                 width: 40px;
                 height: 40px;
                 overflow: hidden;
@@ -290,7 +290,7 @@ body {
               }
             }
           }
-          .message-body {
+          &__body {
             width: 600px;
             float: right;
             position: relative;
@@ -299,9 +299,9 @@ body {
             border-radius: 15px;
             line-height: 1.5;
             word-break: break-all;
-            .message-icons {
+            &__icons {
               margin: 8px 0 0;
-              .message-icon-left {
+              &__left {
                 display: block;
                 color: #aaa;
                 float: left;
@@ -317,7 +317,7 @@ body {
                   font-size: 14px;
                 }
               }
-              .message-icon-right {
+              &__right {
                 cursor: pointer;
                 float: right;
                 display: inline-block;
@@ -339,16 +339,16 @@ body {
         }
       }
     }
-  }
-    .item-detail-message_content {
+
+    &__content {
       padding: 24px;
-      .message-form {
+      &__form {
         p {
           padding: 8px;
           font-size: 14px;
           background-color: #fff6de;
         }
-        .textarea-default {
+        &__textarea {
           margin: 8px 0 0;
           background-color: $gray-back;
           display: block;
@@ -359,7 +359,7 @@ body {
           font-size: 16px;
           line-height: 1.5;
         }
-        .message-submit.btn-default.btn-gray {
+        &__submit {
           border: 1px solid #888;
           background-color: #888;
           color: $white;
@@ -376,12 +376,14 @@ body {
         }
       }
     }
+  }
+}
 
-.nav-item-link-prev-next {
+.item-link-prev-next {
   margin: 24px auto 0;
   width: 700px;
   height: 28px;
-  .nav-item-link_prev {
+  &__prev {
     width: 45%;
     position: relative;
     word-wrap: break-word;
@@ -392,7 +394,7 @@ body {
       text-decoration: none;
     }
   }
-  .nav-item-link_right {
+  &__next {
     width: 45%;
     position: relative;
     word-wrap: break-word;
@@ -463,7 +465,7 @@ body {
 
 
 
-.items-in-user-profile {
+.other-items {
   width: 700px;
   margin: 0 auto;
   section {
@@ -476,7 +478,7 @@ body {
         text-decoration: none;
       }
     }
-    .items-box-content.clearfix {
+    .items-boxs {
       padding: 0;
       width: auto;
       overflow-x: auto;
