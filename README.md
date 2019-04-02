@@ -18,8 +18,8 @@ Rails 5.2.2.1
 | email | string | null: false, unique: true |
 | password | string | -- |
 
-has_many :items
-has_many :trading_partners
+- has_many :items
+- has_many :trading_partners
 
 ## items TB
 
@@ -39,10 +39,10 @@ has_many :trading_partners
 | user_id | references | null: false, index: true, foreign_key: true |
 | size_id | references | null: false, index: true, foreign_key: true |
 
-belongs_to :category
-belongs_to :user
-has_many :images
-has_one :order
+- belongs_to :category
+- belongs_to :user
+- has_many :images
+- has_one :order
 
 ## brands TB
 
@@ -51,7 +51,7 @@ has_one :order
 | name | string | null: false, unique: true |
 | brand_group_id | references | index: true, foreign_key: true |
 
-belongs_to :brand_group
+- belongs_to :brand_group
 
 ## brand_groups TB
 
@@ -59,7 +59,7 @@ belongs_to :brand_group
 |:-----------|------------:|:------------:|
 | name | string | null: false, unique: true |
 
-has_many :brands
+- has_many :brands
 
 ## categories TB
 
@@ -67,7 +67,7 @@ has_many :brands
 |:-----------|------------:|:------------:|
 | name | string | null: false, unique: true |
 
-has_many :items
+- has_many :items
 
 ## sizes TB
 
@@ -90,7 +90,7 @@ has_many :items
 | name | string | null: false |
 | item_id | references | null: false, index: true, foreign_key: true |
 
-belongs_to :item
+- belongs_to :item
 
 ## trading_partners TB
 
@@ -99,9 +99,9 @@ belongs_to :item
 | buyer_id | references | null: false, index: true, foreign_key: { to_table: :users } |
 | seller_id | references | null: false, index: true, foreign_key: { to_table: :users } |
 
-belongs_to :buyer, class_name: "User"
-belongs_to :seller, class_name: "User"
-has_many :orders
+- belongs_to :buyer, class_name: "User"
+- belongs_to :seller, class_name: "User"
+- has_many :orders
 
 ## orders TB
 
@@ -111,6 +111,6 @@ has_many :orders
 | item_id | references | null: false, index: true, foreign_key: true |
 | trading_partner_id | references | null: false, index: true, foreign_key: true |
 
-belongs_to :item
-belongs_to :trading_partner
+- belongs_to :item
+- belongs_to :trading_partner
 
