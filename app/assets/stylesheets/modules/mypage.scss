@@ -52,7 +52,7 @@
     &__prof-box {
       height: 200px;
       width: 700px;
-      background-image: url(common/user_bg.jpg);
+      background-image: image-url('common/user_bg.jpg');
       background-size: cover;
       &:hover {
         color: gray;
@@ -65,7 +65,7 @@
         &__photo {
           height: 50px;
           width: 50px;
-          background-image: url(common/user-icon.png);
+          background-image: image-url('common/user-icon.png');
           background-size: cover;
           border-radius: 50%;
         }
@@ -144,7 +144,7 @@
           position: absolute;
           height: 50px;
           width: 50px;
-          background-image: url(common/mercari_profile.png);
+          background-image: image-url('common/mercari_profile.png');
           background-size: cover;
         }
         &__text {
@@ -198,7 +198,7 @@
         margin-left: 308px;
         height: 80px;
         width: 100px;
-        background-image: url(common/logo-gray.svg);
+        background-image: image-url('common/logo-gray.svg');
         background-size: 120px;
       }
       &__text {
@@ -238,3 +238,73 @@
   }
 
 }
+
+.mainbox {
+  padding-top: 80px;
+  background-color: $gray-back;
+  height: 1391px;
+  display: flex;
+
+  &__prof-contents {
+    margin-left: 120px;
+    &__prof-box {
+    height: 550px;
+    width: 700px;
+    background-color: white;
+      &__titlebox {
+    height: 48px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 48px;
+      }
+      &__iconbox {
+        height: 144px;
+        background-image: image-url('common/user_bg.jpg');
+        background-size: cover;
+        &__space {
+          height: 60px;
+          width: 100%;
+        }
+        &__icon {
+          float: left;
+          margin-left: 240px;
+          height: 60px;
+          width: 60px;
+          background-image: image-url('common/user-icon.png');
+          background-size: cover;
+          border-radius: 50%;
+        }
+        &__name {
+          float: left;
+          margin-top: 10px;
+          margin-left: 10px;
+          height: 45px;
+          width: 200px;
+          background-color: white;
+          border-radius: 5%;
+          border: solid 1px #ccc;
+          font-weight: lighter;
+        }
+      }
+      &__commentbox {
+        margin: 40px 10px 10px 10px;
+        height: 216px;
+        width: 680px;
+        border: solid 0.5px #ccc;
+      }
+      &__button {
+        margin: 0 10px;
+        height: 48px;
+        width: 680px;
+        font-size: 16px;
+        background-color: red;
+        color: white;
+        text-align: center;
+        line-height: 48px;
+      }
+    }
+  }
+
+}
+
