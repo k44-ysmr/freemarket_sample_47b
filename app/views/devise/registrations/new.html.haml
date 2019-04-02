@@ -1,21 +1,78 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+- content_for(:title) { '会員情報入力 - メルカリ サンプル' }
+
+.devise-header
+  = link_to root_path, class: 'devise-header__link' do
+    = image_tag 'common/logo.svg', alt: 'logo', class: 'devise-header__link__image', height: '49', width: '185'
+.devise-main
+  .devise-main__registration
+    %h2.devise-main__registration__head 会員情報入力
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'devise-main__registration__form' }) do |f|
+      .field
+        %span.label ニックネーム
+        %span.necessary 必須
+        = f.text_field :nickname, autofocus: true, placeholder: "例）メルカリ太郎"
+        - if resource.errors.messages[:nickname].present?
+          - resource.errors.messages[:nickname].each do |message|
+            %p.error= message
+      .field
+        %span.label メールアドレス
+        %span.necessary 必須
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+        - if resource.errors.messages[:email].present?
+          - resource.errors.messages[:email].each do |message|
+            %p.error= message
+      .field
+        %span.label パスワード
+        %span.necessary 必須
+        = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
+        - if resource.errors.messages[:password].present?
+          - resource.errors.messages[:password].each do |message|
+            %p.error= message
+      .field
+        %span.label パスワード(確認)
+        %span.necessary 必須
+        = f.password_field :password_confirmation, autocomplete: "new-password",  placeholder: "6文字以上"
+        - if resource.errors.messages[:password_confirmation].present?
+          - resource.errors.messages[:password_confirmation].each do |message|
+            %p.error= message
+      / 以下DB未作成のため中身編集必要あり
+      / .field
+      /   %span.label 姓(全角)
+      /   %span.necessary 必須
+      /   = f.password_field :password_confirmation, autocomplete: "new-password",  placeholder: "例）山田"
+      /   - if resource.errors.messages[:password_confirmation].present?
+      /     - resource.errors.messages[:password_confirmation].each do |message|
+      /       %p.error= message
+      / .field
+      /   %span.label 名(全角)
+      /   %span.necessary 必須
+      /   = f.password_field :password_confirmation, autocomplete: "new-password",  placeholder: "例）彩"
+      /   - if resource.errors.messages[:password_confirmation].present?
+      /     - resource.errors.messages[:password_confirmation].each do |message|
+      /       %p.error= message
+      / .field
+      /   %span.label 姓(カタカナ)
+      /   %span.necessary 必須
+      /   = f.password_field :password_confirmation, autocomplete: "new-password",  placeholder: "例）ヤマダ"
+      /   - if resource.errors.messages[:password_confirmation].present?
+      /     - resource.errors.messages[:password_confirmation].each do |message|
+      /       %p.error= message
+      / .field
+      /   %span.label 名(カタカナ)
+      /   %span.necessary 必須
+      /   = f.password_field :password_confirmation, autocomplete: "new-password",  placeholder: "例）アヤ"
+      /   - if resource.errors.messages[:password_confirmation].present?
+      /     - resource.errors.messages[:password_confirmation].each do |message|
+      /       %p.error= message
+      / .field
+      /   %span.label 生年月日
+      /   %span.necessary 必須
+      /   = f.password_field :password_confirmation, autocomplete: "new-password",  placeholder: "例）アヤ"
+      /   - if resource.errors.messages[:password_confirmation].present?
+      /     - resource.errors.messages[:password_confirmation].each do |message|
+      /       %p.error= message
+      .actions
+        = f.submit "登録する"
+
+.devise-footer
+  = render partial: 'partial/devise-footer'
