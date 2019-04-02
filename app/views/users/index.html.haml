@@ -1,0 +1,28 @@
+-# ページタイトル
+- content_for(:title) { 'マイページ メルカリ' }
+
+/ ヘッダー
+%header.header
+  = render partial: "partial/header"
+/ パンくずリスト
+
+/ メインコンテンツ
+%body
+.mainbox
+  / サイドバー
+  .mainbox__side-box
+    = render partial: "users/side-contents"
+  / メインコンテンツ
+  .mainbox__main-contents
+    = render partial: "users/main-contents"
+
+
+/ バナー
+.banner
+  = render partial: "partial/banner"
+
+/フッター
+%footer.footer
+  = render partial: "partial/footer"
+/ 出品ボタン
+= render partial: "partial/sell-btn"

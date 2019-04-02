@@ -1,3 +1,240 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.mainbox {
+  padding-top: 80px;
+  background-color: $gray-back;
+  height: 1391px;
+  display: flex;
+
+// サイドバー
+  &__side-box {
+    margin: 0 20px 0 100px;
+    height: 1350px;
+    width: 280px;
+    font-color: black;
+    font-size: 14px;
+
+// マイページへのリンク
+    &__first-bar {
+      padding: 12px 0 0 12px;
+      height: 48px;
+      background-color: $gray;
+      font-weight: bold;
+      display: flex;
+    }
+
+// 他のページへのリンク
+    &__next-bar {
+      padding: 12px 0 0 12px;
+      height: 48px;
+      background-color: $white;
+      border-top: solid 1px $gray-back;
+      display: flex;
+      &:hover {
+        background-color: $gray-hover;
+      }
+    }
+
+// メルペイ/設定
+    &__text {
+      margin: 40px 0 -24px 0;
+      height: 48px;
+      background-color: $gray-back;
+      font-size: 16px;
+      font-weight: bold;
+      font-color: black;
+    }
+  }
+
+// メインコンテンツ
+  &__main-contents {
+    margin-left: 60px;
+
+// プロフィール欄
+    &__prof-box {
+      height: 200px;
+      width: 700px;
+      background-image: url(common/user_bg.jpg);
+      background-size: cover;
+      &:hover {
+        color: gray;
+      }
+      &__icon {
+        margin: 0 325px;
+        &__space {
+          height: 68px;
+        }
+        &__photo {
+          height: 50px;
+          width: 50px;
+          background-image: url(common/user-icon.png);
+          background-size: cover;
+          border-radius: 50%;
+        }
+
+// ユーザーネーム
+        &__name {
+          font-size: 14px;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+
+      &__score {
+        font-size: 14px;
+        display: flex;
+
+// 評価(テキスト)
+        &__text1 {
+          margin-left: 269px;
+        }
+
+// 評価の値
+        &__value {
+          margin-left: 14px;
+          font-weight: bold;
+        }
+// 出品数(テキスト)
+        &__text2 {
+          margin-left: 14px;
+        }
+
+// 出品数の値
+        &__exhibits {
+          margin-left: 14px;
+          font-weight: bold;
+        }
+      }
+    }
+
+// お知らせ/やることリスト
+    &__contents-tab {
+      height: 560px;
+      &__menu {
+        height: 75px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        &__left {
+          width: 50%;
+          line-height: 75px;
+          background-color: white;
+          border-top: solid 2px red;
+          &:hover {
+            color: gray;
+          }
+        }
+        &__right {
+          line-height: 74px;
+          width: 50%;
+          background-color: #eee;
+          &:hover {
+            color: gray;
+          }
+        }
+      }
+      &__box {
+        padding: 15px;
+        height: 80px;
+        background-color: white;
+        border-bottom: solid 1px $gray-back;
+        &:hover {
+          background-color: $gray-hover;
+        }
+        &__icon {
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          background-image: url(common/mercari_profile.png);
+          background-size: cover;
+        }
+        &__text {
+          margin-left: 70px;
+          height: 24px;
+        }
+        &__time {
+          margin-left: 90px;
+          font-size: 12px;
+          color: gray;
+        }
+      }
+    }
+
+// 一覧
+    &__list {
+      height: 88px;
+      background-color: white;
+      &__list-space {
+        height: 20px;
+      }
+      &__list-btn {
+        margin: 0 auto;
+        height: 56px;
+        width: 668px;
+        background-color: #eee;
+        text-align: center;
+        line-height: 60px;
+        &:hover {
+          background-color: $gray-hover;
+        }
+      }
+    }
+
+// 購入した商品
+    &__item-box {
+      margin-top: 40px;
+      padding-left: 16px;
+      height: 72px;
+      background-color: $gray-hover;
+      font-weight: bold;
+      line-height: 72px;
+    }
+    &__item-tab {
+      height: 235px;
+      background-color: white;
+      &__image-box {
+        height: 50px;
+      }
+      &__image {
+        margin-left: 308px;
+        height: 80px;
+        width: 100px;
+        background-image: url(common/logo-gray.svg);
+        background-size: 120px;
+      }
+      &__text {
+        margin-left: 276px;
+        color: gray;
+      }
+
+    }
+  }
+
+// サイドバーの矢印
+  i1 {
+    position: absolute;
+    margin-left: 242px;
+    font-size: 16px;
+  }
+
+// お知らせ欄の時計アイコン
+  i2 {
+    position: absolute;
+    color: gray;
+    margin-top: -16px;
+    margin-left: 70px;
+    font-size: 14px;
+  }
+
+// お知らせ欄の矢印
+  i3 {
+    position: absolute;
+    margin-top: -24px;
+    margin-left: 652px;
+    font-size: 16px;
+  }
+
+  a {
+    color: black;
+  }
+
+}
