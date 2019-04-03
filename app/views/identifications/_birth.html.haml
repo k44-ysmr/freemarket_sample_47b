@@ -1,0 +1,15 @@
+.mainbox__identify-contents__box__formbox
+  .mainbox__identify-contents__box__formbox__titlebox
+    .mainbox__identify-contents__box__formbox__titlebox__text 生年月日
+    .mainbox__identify-contents__box__formbox__titlebox__require 必須
+  .mainbox__identify-contents__box__formbox__birthbox
+    = render partial: 'identifications/year'
+    .mainbox__identify-contents__box__formbox__birthbox__text 年
+    = render partial: 'identifications/month'
+    / .mainbox__identify-contents__box__formbox__birthbox__form
+    .mainbox__identify-contents__box__formbox__birthbox__text 月
+    = render partial: 'identifications/day'
+    / .mainbox__identify-contents__box__formbox__birthbox__form
+    .mainbox__identify-contents__box__formbox__birthbox__text 日
+  .mainbox__identify-contents__box__formbox__text ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
+
