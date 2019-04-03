@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     }
 
   root to: 'items#index'
-  resources :users
+  resources :users do
+    get 'logout'
+  end
   resources :items
   resources :buys
 end
