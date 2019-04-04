@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     }
 
   root to: 'items#index'
-  resources :users do
-    get 'identify'
-  end
+  resources :users
   resources :items
   resources :buys
+
+  resources :identifications, only: [:index]
 end
