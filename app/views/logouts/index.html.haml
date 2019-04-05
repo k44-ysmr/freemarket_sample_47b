@@ -1,0 +1,28 @@
+/ ヘッダー
+%header.header
+  = render partial: "partial/header"
+/ パンくずリスト
+
+/ メインコンテンツ
+%body
+.mainbox
+  / サイドバー
+  .mainbox__side-box
+    = render partial: "users/side-contents"
+
+  .mainbox__logout-contents
+    .mainbox__logout-contents__logout-box
+      .mainbox__logout-contents__logout-box__space
+      .mainbox__logout-contents__logout-box__btn
+        = link_to 'ログアウト', destroy_user_session_path, class: '.mainbox__logout-contents__logout-box__btn', method: :delete
+
+
+/ バナー
+.banner
+  = render partial: "partial/banner"
+
+/フッター
+%footer.footer
+  = render partial: "partial/footer"
+/ 出品ボタン
+= render partial: "partial/sell-btn"

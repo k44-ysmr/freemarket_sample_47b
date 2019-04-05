@@ -1,0 +1,6 @@
+.mainbox__identify-contents__box__formbox
+  .mainbox__identify-contents__box__formbox__titlebox
+    .mainbox__identify-contents__box__formbox__titlebox__text 都道府県
+    .mainbox__identify-contents__box__formbox__titlebox__arbitrary 任意
+  .mainbox__identify-contents__box__formbox__titlebox
+    = collection_select :map, :presence, Prefecture.all, :id, :name,{prompt: true}, {class: "select_pref"}
