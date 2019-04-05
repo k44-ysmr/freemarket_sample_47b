@@ -35,36 +35,13 @@
             %span.form-require 必須
             %br/
             .select-wrap
-              %select.select-default
-                %option{value: "01"} 01
-                %option{value: "02"} 02
-                %option{value: "03"} 03
-                %option{value: "04"} 04
-                %option{value: "05"} 05
-                %option{value: "06"} 06
-                %option{value: "07"} 07
-                %option{value: "08"} 08
-                %option{value: "09"} 09
-                %option{value: "10"} 10
-                %option{value: "11"} 11
-                %option{value: "12"} 12
-              / %i.fas.fa-chevron-down
+              = date_select :hoge, :month, use_month_numbers: true, discard_year: true, discard_day: true
+              %i.fas.fa-chevron-down
             %span 月
             %ul#expire-mm-error-wrapper.has-error-text
             .select-wrap
-              %select.select-default
-                %option{value: "19"} 19
-                %option{value: "20"} 20
-                %option{value: "21"} 21
-                %option{value: "22"} 22
-                %option{value: "23"} 23
-                %option{value: "24"} 24
-                %option{value: "25"} 25
-                %option{value: "26"} 26
-                %option{value: "27"} 27
-                %option{value: "28"} 28
-                %option{value: "29"} 29
-              / %i.fas.fa-chevron-down
+              = date_select :hoge, :year, use_month_numbers: true, discard_month: true, discard_day: true
+              %i.fas.fa-chevron-down
             %span 年
             %ul#expire-yy-error-wrapper.has-error-text
           .form-group
