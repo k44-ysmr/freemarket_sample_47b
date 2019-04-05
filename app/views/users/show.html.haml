@@ -11,12 +11,13 @@
 / メインコンテンツ
 %body
 .mainbox
-  / サイドバー
-  .mainbox__side-box
-    = render partial: "users/side-contents"
-  / メインコンテンツ
-  .mainbox__main-contents
-    = render partial: "users/main-contents"
+  .mainbox__margin
+    / サイドバー
+    .mainbox__side-box
+      = render partial: "users/side-contents"
+    / メインコンテンツ
+    .mainbox__main-contents
+      = render partial: "users/main-contents"
 
 
 / バナー
