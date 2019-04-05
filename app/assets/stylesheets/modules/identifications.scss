@@ -161,9 +161,17 @@
   }
 
   select {
+    -webkit-appearance: none;
     margin-left: 5px;
     height: 48px;
     width: 140px;
     background-color: white;
+  }
+
+  .select_pref {
+    margin-top: -15px;
+    margin-left: -5px;
+    background-color: white;
+    width: 525px;
   }
 }
