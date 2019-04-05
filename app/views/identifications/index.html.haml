@@ -23,7 +23,7 @@
       .mainbox__identify-contents__box__text2 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
       = link_to do
         .mainbox__identify-contents__box__link1 本人確認書類のアップロードについて
-        %i4.fa.fa-chevron-right
+        %i.fa.fa-chevron-right.arrow1
       .mainbox__identify-contents__box__formbox
         = render partial: "identifications/name"
         = render partial: "identifications/birth"
@@ -32,7 +32,7 @@
         = render partial: "identifications/otherinfo"
       %button.mainbox__identify-contents__box__btn{:type => 'submit'} 登録する
       .mainbox__identify-contents__box__link2 本人情報の登録について
-      %i5.fa.fa-chevron-right
+      %i.fa.fa-chevron-right.arrow2
 
 
 
