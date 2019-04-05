@@ -4,7 +4,7 @@
   height: 1391px;
   display: flex;
   &__logout-contents {
-    margin-left: 120px;
+    margin-left: 40px;
     &__logout-box {
     height: 180px;
     width: 700px;
@@ -17,10 +17,13 @@
       height: 50px;
       width: 320px;
       background-color: red;
-      color: white;
       text-align: center;
       line-height: 50px;
+      a:visited {
+        color: white;
+      }
       }
     }
   }
+
 }

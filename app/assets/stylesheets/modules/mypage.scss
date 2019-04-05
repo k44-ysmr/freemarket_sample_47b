@@ -2,11 +2,8 @@
   padding-top: 80px;
   background-color: $gray-back;
   height: 1391px;
-  display: flex;
-
 // サイドバー
   &__side-box {
-    margin: 0 20px 0 100px;
     height: 1350px;
     width: 280px;
     font-color: black;
@@ -46,7 +43,7 @@
 
 // メインコンテンツ
   &__main-contents {
-    margin-left: 60px;
+    margin-left: 20px;
 
 // プロフィール欄
     &__prof-box {
@@ -246,7 +243,7 @@
   display: flex;
 
   &__prof-contents {
-    margin-left: 120px;
+    margin-left: 40px;
     &__prof-box {
     height: 550px;
     width: 700px;
@@ -285,13 +282,17 @@
           border-radius: 5%;
           border: solid 1px #ccc;
           font-weight: lighter;
+          text-indent: 10px;
+          outline: 0;
         }
       }
       &__commentbox {
-        margin: 40px 10px 10px 10px;
+        margin: 40px 20px 10px 20px;
         height: 216px;
-        width: 680px;
+        width: 660px;
         border: solid 0.5px #ccc;
+        padding: 10px;
+        outline: 0;
       }
       &__button {
         margin: 0 10px;
@@ -302,9 +303,14 @@
         color: white;
         text-align: center;
         line-height: 48px;
+        outline: 0;
       }
     }
   }
 
+  .mainbox__margin {
+    display: flex;
+    margin: auto;
+  }
 }
 
