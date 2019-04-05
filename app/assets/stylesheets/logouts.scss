@@ -1,0 +1,28 @@
+.mainbox {
+  padding-top: 80px;
+  background-color: $gray-back;
+  height: 1391px;
+  display: flex;
+  &__logout-contents {
+    margin-left: 120px;
+    &__logout-box {
+    height: 180px;
+    width: 700px;
+    background-color: white;
+    &__space {
+      height: 65px;
+    }
+    &__btn {
+      margin: 0 auto;
+      height: 50px;
+      width: 320px;
+      background-color: red;
+      text-align: center;
+      line-height: 50px;
+      a:visited {
+        color: white;
+      }
+      }
+    }
+  }
+}
