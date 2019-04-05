@@ -15,15 +15,16 @@
         = link_to 'ブランドから探す', class: 'header__container__bottom__nav__brand__link'
     .header__container__bottom__user
       - if user_signed_in?
-        = link_to '#', class: 'header__container__bottom__user__todo' do
-          %i.fas.fa-check.fa-lg
-          %span やることリスト
-        = link_to '#', class: 'header__container__bottom__user__notice' do
-          %i.far.fa-bell
-          %span お知らせ
         = link_to '#', class: 'header__container__bottom__user__mypage' do
           = image_tag 'common/user-icon.png', alt: 'icon', class: 'header__container__bottom__user__mypage__icon', height: '32', width: '32'
           %span マイページ
+        = link_to '#', class: 'header__container__bottom__user__todo' do
+          %i.fas.fa-check.fa-lg
+          %span やることリスト
+        = link_to destroy_user_session_path, method: :delete, class: 'header__container__bottom__user__notice' do
+          %i.far.fa-bell
+          %span ログアウト
+
       - else
         = link_to '新規会員登録', users_path, class: 'header__container__bottom__user__signup'
         = link_to 'ログイン', new_user_session_path, class: 'header__container__bottom__user__login'
