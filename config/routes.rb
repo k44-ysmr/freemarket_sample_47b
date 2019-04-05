@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   end
   resources :items
   resources :buys
+  resources :credit_card
+
   resources :identifications, only: [:index]
   resources :logouts, only: [:index]
+
 end
