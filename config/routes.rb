@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :users
   resources :items
   resources :buys
-  resources :logouts
+  resources :logouts, only: [:index]
 end
