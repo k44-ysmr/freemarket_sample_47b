@@ -39,6 +39,18 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'rails-controller-testing'
+  gem 'pry-byebug'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -69,18 +81,9 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-group :development, :test do
-  gem 'capistrano'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
-end
-
 gem 'devise'
 gem 'haml-rails'
 gem 'erb2haml'
-gem 'pry-rails'
 gem 'rails-i18n', '~> 5.1.3'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
@@ -90,9 +93,6 @@ gem 'enum_help'
 gem "kaminari"
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'rspec-rails', '~> 3.5'
-gem 'rails-controller-testing'
-gem 'factory_bot_rails'
 gem 'jquery-rails'
 gem 'fog-aws'
 gem 'gretel'
