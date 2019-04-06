@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function(){
 
-$(function() {
-
 // ボーダーを表示する(画面遷移時)
   $('.mainbox__main-contents__contents-tab__menu__left2').addClass('red-border');
 
@@ -47,6 +45,4 @@ $(function() {
 // ボーダーを表示する
     $('.mainbox__main-contents__contents-tab__menu__left2').addClass('red-border');
   });
-});
-
 });
