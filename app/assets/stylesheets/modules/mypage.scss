@@ -115,12 +115,27 @@
           width: 50%;
           line-height: 75px;
           background-color: white;
-          border-top: solid 2px red;
           &:hover {
             color: gray;
           }
         }
         &__right {
+          line-height: 74px;
+          width: 50%;
+          background-color: #eee;
+          &:hover {
+            color: gray;
+          }
+        }
+        &__left2 {
+          width: 50%;
+          line-height: 75px;
+          background-color: white;
+          &:hover {
+            color: gray;
+          }
+        }
+        &__right2 {
           line-height: 74px;
           width: 50%;
           background-color: #eee;
@@ -151,6 +166,24 @@
         &__time {
           margin-left: 90px;
           font-size: 12px;
+          color: gray;
+        }
+      }
+      &__box2 {
+        height: 235px;
+        background-color: white;
+        &__image-box {
+          height: 50px;
+        }
+        &__image {
+          margin-left: 308px;
+          height: 80px;
+          width: 100px;
+          background-image: image-url('common/logo-gray.svg');
+          background-size: 120px;
+        }
+        &__text {
+          margin-left: 276px;
           color: gray;
         }
       }
@@ -234,6 +267,16 @@
     color: black;
   }
 
+  .gray {
+  background-color: #eee;
+  }
+
+  .white {
+    background-color: white;
+  }
+  .red-border {
+    border-top: solid 2px red;
+  }
 }
 
 .mainbox {
