@@ -25,17 +25,7 @@
         .mainbox__listing-box__item-tab__image
         .mainbox__listing-box__item-tab__text 取引中の商品がありません
       .mainbox__listing-box__pager-box
-        = link_to do
-          .mainbox__listing-box__pager-box__prev
-            %i.fa.fa-chevron-left.prev
-        = link_to do
-          .mainbox__listing-box__pager-box__next
-            %i.fa.fa-chevron-right.next
-
-
-
-
-
+        = render partial: 'listings/listings-pager'
 
 / バナー
 .banner

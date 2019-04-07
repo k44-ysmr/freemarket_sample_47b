@@ -7,9 +7,11 @@
 %body
 .mainbox
   .mainbox__margin
+
     / サイドバー
     .mainbox__side-box
       = render partial: "users/side-contents"
+
     / メインコンテンツ
     .mainbox__listing-box
       出品した商品
@@ -33,17 +35,7 @@
       /   .mainbox__listing-box__item-tab__text 出品中の商品がありません
 
       .mainbox__listing-box__pager-box
-        = link_to do
-          .mainbox__listing-box__pager-box__prev
-            %i.fa.fa-chevron-left.prev
-        = link_to do
-          .mainbox__listing-box__pager-box__next
-            %i.fa.fa-chevron-right.next
-
-
-
-
-
+        = render partial: 'listings/listings-pager'
 
 / バナー
 .banner
