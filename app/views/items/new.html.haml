@@ -8,22 +8,20 @@
       .sell-main__inner
         %h2.form-title 商品の情報を入力
         = form_for @item, html: { class: "sell-form" } do |f|
-          / %form.sell-form
           .sell-form__upload
             %h3.sell-form__upload__head
               出品画像
               %span.form-require 必須
             %p 最大10枚までアップロードできます
             %label.sell-form__upload__dropbox
-              / .sell-upload-items-container
-              /   .sell-upload-items.have-item-0
-              /     %ul
-              .sell-form__upload__dropitem
-                %input.sell-form__upload__dropitem__file{ multiple: "multiple", name: "image1", type: "file"}/
-                %per.item0-message
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをアップロード
-                  %i.icon-camera
+
+              .sell-form__upload__dropitem#itemfile
+                = f.fields_for @item do |image|
+                  = image.file_field :name, name: "item[images_attributes][][name]",class: 'sell-form__upload__dropitem__file',multiple: "true"
+                  %per.item0-message
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
+                    %i.icon-camera
 
           .sell-content
             .form-group
@@ -31,12 +29,12 @@
                 商品名
                 %span.form-require 必須
               %div
-                %input.input-default{placeholder: "商品名（必須 40文字まで)", value: ""}/
+                = f.text_field :name, class: 'input-default', placeholder: "商品名（必須 40文字まで)"
             .form-group
               %label
                 商品の説明
                 %span.form-require 必須
-              %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+              = f.text_area :description, class: 'textarea-default', placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
 
           .sell-content.clearfix
             %h3.sell-content-head 商品の詳細
@@ -46,41 +44,27 @@
                   カテゴリー
                   %span.form-require 必須
                 .select-wrap
-                  / = f.collection_select :presence,Category.all, :id, :name,{prompt: true}, {class: "select-default"}
-                  %select.select-default
-                    %option{value: ""} ---
-                    %option{value: "1"} レディース
-                    %option{value: "2"} メンズ
-                    %option{value: "3"} ベビー・キッズ
-                    %option{value: "4"} インテリア・住まい・小物
-                  %i.icon-arrow-bottom
+                  = f.collection_select :category_id, Category.all, :id, :name,{prompt: "---"}, {class: "select-default"}
+              .form-group
+                %label
+                  サイズ
+                  %span.form-require 必須
                 .select-wrap
-                  %select.select-default
-                    %option{value: ""} ---
-                    %option{value: "1"} トップス
-                    %option{value: "2"} おズボン
-                    %option{value: "3"} お腹に巻くやつ
-                    %option{value: "4"} などなど
+                  = f.collection_select :size_id, Size.all, :id, :name,{prompt: "---"}, {class: "select-default"}
                   %i.icon-arrow-bottom
+              .form-group
+                %label
+                  ブランド
+                  %span.form-any 任意
                 .select-wrap
-                  %select.select-default
-                    %option{value: ""} ---
-                    %option{value: "1"} Tシャツ
-                    %option{value: "2"} 網タイツ
-                    %option{value: "3"} ジーパン
-                    %option{value: "4"} などなど
+                  = f.text_field  :brand_id, class: 'input-default', placeholder: "例）シャネル"
                   %i.icon-arrow-bottom
               .form-group
                 %label
                   商品の状態
                   %span.form-require 必須
                 .select-wrap
-                  %select.select-default
-                    %option{value: ""} ---
-                    %option{value: "1"} 新品、未使用
-                    %option{value: "2"} 未使用に近い
-                    %option{value: "3"} 目立った傷や汚れなし
-                    %option{value: "4"} やや傷や汚れあり
+                  = f.select :condition, Item.conditions.keys,{prompt: "---"}, {class: "select-default"}
                   %i.icon-arrow-bottom
 
           .sell-content.clearfix
@@ -91,28 +75,29 @@
                   配送料の負担
                   %span.form-require 必須
                 .select-wrap
-                  %select.select-default
-                    %option{ value: ""} ---
-                    %option{ value: "2"} 送料込み(出品者負担)
-                    %option{ value: "1"} 着払い(購入者負担)
+                  = f.select :shipping_fee, Item.shipping_fees.keys,{prompt: "---"}, {class: "select-default"}
+
                   %i.icon-arrow-bottom
               .form-group
                 %label
+                  配送方法
+                  %span.form-require 必須
+                .select-wrap
+                  = f.select :shipping_method, Item.shipping_methods.keys,{prompt: "---"}, {class: "select-default"}
+                  %i.icon-arrow-bottom
+              .form-group
+                = f.label :prefecture_id do
                   発送元の地域
                   %span.form-require 必須
                 .select-wrap
-                  = f.collection_select :presence, Prefecture.all, :id, :name,{prompt: true}, {class: "select-default"}
+                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{prompt: "---"}, {class: "select-default"}
                   %i.icon-arrow-bottom
               .form-group
                 %label
                   発送までの日数
                   %span.form-require 必須
                 .select-wrap
-                  %select.select-default
-                    %option{ value: ""} ---
-                    %option{ value: "1"} 1~2日で発送
-                    %option{ value: "2"} 2~3日で発送
-                    %option{ value: "3"} 4~7日で発送
+                  = f.select :days_before_shipping, Item.days_before_shippings.keys,{prompt: "---"}, {class: "select-default"}
                   %i.icon-arrow-bottom
 
           .sell-content.clearfix
@@ -129,7 +114,7 @@
                     .l-right.sell-price__group__input
                       ¥
                       %div.clearinput
-                        %input.input-price{placeholder: "例）300", value: ""}/
+                        = f.text_field :price, class: 'input-price', placeholder: "例）300"
                   %li.contract
                     .ccontract__left
                       販売手数料 (10%)
@@ -140,6 +125,7 @@
                       %p.profit -
 
           .sell-btn-box
+            = f.hidden_field :trade_status, value:1
             %div
               %p
                 =link_to "禁止されている出品", "#"
@@ -153,9 +139,8 @@
                 また、出品をもちまして
                 =link_to "加盟店規約", "#"
                 に同意したことになります。
-            %button.sell-btn-box__exhibit{ type: "submit"}
-              出品する
-            =link_to 'もどる', '#', class: 'sell-btn-box__out'
+            = f.submit "出品する", class: 'sell-btn-box__exhibit'
+            =link_to  "トップページへ戻る", root_path, class: 'sell-btn-box__out'
 
 .devise-footer
   = render partial: 'partial/devise-footer'
