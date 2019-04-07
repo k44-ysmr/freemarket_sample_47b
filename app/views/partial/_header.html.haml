@@ -1,9 +1,12 @@
 .header__container
   .header__container__top
-    = link_to root_path, class: 'header__container__top__logo' do
-      = image_tag 'common/logo.svg', alt: 'logo', class: 'header__container__top__logo__image', height: '36', width: '134'
-      / 検索フォーム
-      / %i.fas.fa-search
+    .header__container__top__box
+      = link_to root_path, class: 'header__container__top__box__logo' do
+        = image_tag 'common/logo.svg', alt: 'logo', class: 'header__container__top__box__logo__image', height: '36', width: '134'
+
+      .header__container__top__box__searchbox
+        %input.input-search{name: "keyword", placeholder: "何かお探しですか？", :type => "search", :value => "" }
+          %i.fas.fa-search.grass
 
   .header__container__bottom
     %nav.header__container__bottom__nav
@@ -15,15 +18,16 @@
         = link_to 'ブランドから探す', class: 'header__container__bottom__nav__brand__link'
     .header__container__bottom__user
       - if user_signed_in?
-        = link_to '#', class: 'header__container__bottom__user__todo' do
-          %i.fas.fa-check.fa-lg
-          %span やることリスト
-        = link_to '#', class: 'header__container__bottom__user__notice' do
-          %i.far.fa-bell
-          %span お知らせ
         = link_to '#', class: 'header__container__bottom__user__mypage' do
           = image_tag 'common/user-icon.png', alt: 'icon', class: 'header__container__bottom__user__mypage__icon', height: '32', width: '32'
           %span マイページ
+        = link_to '#', class: 'header__container__bottom__user__todo' do
+          %i.fas.fa-check.fa-lg
+          %span やることリスト
+        = link_to destroy_user_session_path, method: :delete, class: 'header__container__bottom__user__notice' do
+          %i.far.fa-bell
+          %span ログアウト
+
       - else
         = link_to '新規会員登録', users_path, class: 'header__container__bottom__user__signup'
         = link_to 'ログイン', new_user_session_path, class: 'header__container__bottom__user__login'

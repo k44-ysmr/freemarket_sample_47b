@@ -2,11 +2,8 @@
   padding-top: 80px;
   background-color: $gray-back;
   height: 1391px;
-  display: flex;
-
 // サイドバー
   &__side-box {
-    margin: 0 20px 0 100px;
     height: 1350px;
     width: 280px;
     font-color: black;
@@ -46,13 +43,13 @@
 
 // メインコンテンツ
   &__main-contents {
-    margin-left: 60px;
+    margin-left: 20px;
 
 // プロフィール欄
     &__prof-box {
       height: 200px;
       width: 700px;
-      background-image: url(common/user_bg.jpg);
+      background-image: image-url('common/user_bg.jpg');
       background-size: cover;
       &:hover {
         color: gray;
@@ -65,7 +62,7 @@
         &__photo {
           height: 50px;
           width: 50px;
-          background-image: url(common/user-icon.png);
+          background-image: image-url('common/user-icon.png');
           background-size: cover;
           border-radius: 50%;
         }
@@ -118,12 +115,27 @@
           width: 50%;
           line-height: 75px;
           background-color: white;
-          border-top: solid 2px red;
           &:hover {
             color: gray;
           }
         }
         &__right {
+          line-height: 74px;
+          width: 50%;
+          background-color: #eee;
+          &:hover {
+            color: gray;
+          }
+        }
+        &__left2 {
+          width: 50%;
+          line-height: 75px;
+          background-color: white;
+          &:hover {
+            color: gray;
+          }
+        }
+        &__right2 {
           line-height: 74px;
           width: 50%;
           background-color: #eee;
@@ -144,7 +156,7 @@
           position: absolute;
           height: 50px;
           width: 50px;
-          background-image: url(common/mercari_profile.png);
+          background-image: image-url('common/mercari_profile.png');
           background-size: cover;
         }
         &__text {
@@ -154,6 +166,24 @@
         &__time {
           margin-left: 90px;
           font-size: 12px;
+          color: gray;
+        }
+      }
+      &__box2 {
+        height: 235px;
+        background-color: white;
+        &__image-box {
+          height: 50px;
+        }
+        &__image {
+          margin-left: 308px;
+          height: 80px;
+          width: 100px;
+          background-image: image-url('common/logo-gray.svg');
+          background-size: 120px;
+        }
+        &__text {
+          margin-left: 276px;
           color: gray;
         }
       }
@@ -198,7 +228,7 @@
         margin-left: 308px;
         height: 80px;
         width: 100px;
-        background-image: url(common/logo-gray.svg);
+        background-image: image-url('common/logo-gray.svg');
         background-size: 120px;
       }
       &__text {
@@ -237,4 +267,93 @@
     color: black;
   }
 
+  .gray {
+  background-color: #eee;
+  }
+
+  .white {
+    background-color: white;
+  }
+  .red-border {
+    border-top: solid 2px red;
+  }
 }
+
+.mainbox {
+  padding-top: 80px;
+  background-color: $gray-back;
+  height: 1391px;
+  display: flex;
+
+  &__prof-contents {
+    margin-left: 40px;
+    &__prof-box {
+    height: 550px;
+    width: 700px;
+    background-color: white;
+      &__titlebox {
+    height: 48px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 48px;
+      }
+      &__iconbox {
+        height: 144px;
+        background-image: image-url('common/user_bg.jpg');
+        background-size: cover;
+        &__space {
+          height: 60px;
+          width: 100%;
+        }
+        &__icon {
+          float: left;
+          margin-left: 240px;
+          height: 60px;
+          width: 60px;
+          background-image: image-url('common/user-icon.png');
+          background-size: cover;
+          border-radius: 50%;
+        }
+        &__name {
+          float: left;
+          margin-top: 10px;
+          margin-left: 10px;
+          height: 45px;
+          width: 200px;
+          background-color: white;
+          border-radius: 5%;
+          border: solid 1px #ccc;
+          font-weight: lighter;
+          text-indent: 10px;
+          outline: 0;
+        }
+      }
+      &__commentbox {
+        margin: 40px 20px 10px 20px;
+        height: 216px;
+        width: 660px;
+        border: solid 0.5px #ccc;
+        padding: 10px;
+        outline: 0;
+      }
+      &__button {
+        margin: 0 10px;
+        height: 48px;
+        width: 680px;
+        font-size: 16px;
+        background-color: red;
+        color: white;
+        text-align: center;
+        line-height: 48px;
+        outline: 0;
+      }
+    }
+  }
+
+  .mainbox__margin {
+    display: flex;
+    margin: auto;
+  }
+}
+
