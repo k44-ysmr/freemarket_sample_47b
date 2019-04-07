@@ -16,5 +16,8 @@ Rails.application.routes.draw do
 
   resources :identifications, only: [:index]
   resources :logouts, only: [:index]
+  resources :listings, only: [:index]
+  resources :progressions, only: [:index]
+  resources :completions, only: [:index]
 
 end
