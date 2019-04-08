@@ -13,12 +13,13 @@ class Item < ApplicationRecord
   has_one :order
   # accepts_nested_attributes_for :oders, update_only: true
 
-enum condition: {"新品、未使用":1, "未使用に近い":2, "目立った傷汚れなし":3, "やや傷や汚れあり":4}
+# ja.ymlで日本語表示は定義
 
-enum shipping_fee: {"送料込み(出品者負担)":1, "着払い(購入者負担)":2}
+enum condition: { excellent: 1, good: 2, fair: 3, bad: 4}
 
-enum shipping_method: {"未定":1, "らくらくメルカリ便":2, "クロネコヤマト":3, "ゆうパック":4}
+enum shipping_fee: { shipping_included: 1, shippinng_separately: 2}
 
-enum days_before_shipping: {"1~2日で発送":1, "2~3日で発送":2, "4~7日で発送":3}
+enum shipping_method: { undecided: 1, mercari: 2, kuroneko: 3, yu_pack: 4}
 
+enum days_before_shipping: { two_days: 1, four_days: 2, seven_days: 3}
 end

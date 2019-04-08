@@ -18,7 +18,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -44,7 +44,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -206,3 +206,22 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  enums:
+    item:
+      condition:
+        excellent: 新品、未使用
+        good: 未使用に近い
+        fair: 目立った傷汚れなし
+        bad: やや傷や汚れあり
+      shipping_fee:
+        shipping_included: 送料込み(出品者負担)
+        shippinng_separately: 着払い(購入者負担)
+      shipping_method:
+        undecided: 未定
+        mercari: らくらくメルカリ便
+        kuroneko: クロネコヤマト
+        yu_pack: 郵パック
+      days_before_shipping:
+        two_days: 1~2日で発送
+        four_days: 2~3日で発送
+        seven_days: 4~7日で発送

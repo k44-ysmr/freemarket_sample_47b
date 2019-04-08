@@ -64,7 +64,7 @@
                   商品の状態
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :condition, Item.conditions.keys,{prompt: "---"}, {class: "select-default"}
+                  = f.select :condition, options_for_select(Item.conditions.keys.map{|k|[I18n.t("enums.item.condition.#{k}"),k]}),{prompt: "---"}, {class: "select-default"}
                   %i.icon-arrow-bottom
 
           .sell-content.clearfix
@@ -75,7 +75,7 @@
                   配送料の負担
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :shipping_fee, Item.shipping_fees.keys,{prompt: "---"}, {class: "select-default"}
+                  = f.select :shipping_fee, options_for_select(Item.shipping_fees.keys.map{|k|[I18n.t("enums.item.shipping_fee.#{k}"),k]}),{prompt: "---"}, {class: "select-default"}
 
                   %i.icon-arrow-bottom
               .form-group
@@ -83,7 +83,7 @@
                   配送方法
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :shipping_method, Item.shipping_methods.keys,{prompt: "---"}, {class: "select-default"}
+                  = f.select :shipping_method,options_for_select(Item.shipping_methods.keys.map{|k|[I18n.t("enums.item.shipping_method.#{k}"),k]}),{prompt: "---"}, {class: "select-default"}
                   %i.icon-arrow-bottom
               .form-group
                 = f.label :prefecture_id do
@@ -97,7 +97,7 @@
                   発送までの日数
                   %span.form-require 必須
                 .select-wrap
-                  = f.select :days_before_shipping, Item.days_before_shippings.keys,{prompt: "---"}, {class: "select-default"}
+                  = f.select :days_before_shipping, options_for_select(Item.days_before_shippings.keys.map{|k|[I18n.t("enums.item.days_before_shipping.#{k}"),k]}),{prompt: "---"}, {class: "select-default"}
                   %i.icon-arrow-bottom
 
           .sell-content.clearfix
