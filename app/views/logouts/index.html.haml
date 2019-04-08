@@ -1,13 +1,8 @@
--# ページタイトル
-- content_for(:title) { 'マイページ メルカリ' }
-
 / ヘッダー
 %header.header
   = render partial: "partial/header"
 / パンくずリスト
-%nav.bread-container
-  - breadcrumb :mypage
-  = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fas fa-chevron-right')}"
+
 / メインコンテンツ
 %body
 .mainbox
@@ -15,9 +10,12 @@
     / サイドバー
     .mainbox__side-box
       = render partial: "users/side-contents"
-    / メインコンテンツ
-    .mainbox__main-contents
-      = render partial: "users/main-contents"
+
+    .mainbox__logout-contents
+      .mainbox__logout-contents__logout-box
+        .mainbox__logout-contents__logout-box__space
+        .mainbox__logout-contents__logout-box__btn
+          = link_to 'ログアウト', destroy_user_session_path, class: '.mainbox__logout-contents__logout-box__btn', method: :delete
 
 
 / バナー

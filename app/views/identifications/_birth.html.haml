@@ -1,0 +1,12 @@
+.mainbox__identify-contents__box__formbox
+  .mainbox__identify-contents__box__formbox__titlebox
+    .mainbox__identify-contents__box__formbox__titlebox__text 生年月日
+    .mainbox__identify-contents__box__formbox__titlebox__require 必須
+  .mainbox__identify-contents__box__formbox__birthbox
+    .mainbox__identify-contents__box__formbox__birthbox__year
+      = date_select :hoge, :year, :start_year => 1990, :end_year => 2020, :discard_month => true, :include_blank => true, :default => ' '
+    .mainbox__identify-contents__box__formbox__birthbox__texty 年
+    .mainbox__identify-contents__box__formbox__birthbox__month
+      = date_select :hoge, :month, :use_month_numbers => true, :discard_year => true, date_separator: '月', :include_blank => true, :default => ' '
+    .mainbox__identify-contents__box__formbox__birthbox__textd 日
+  .mainbox__identify-contents__box__formbox__text ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
