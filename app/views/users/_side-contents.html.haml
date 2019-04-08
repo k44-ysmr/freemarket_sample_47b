@@ -68,7 +68,7 @@
       %i1.fa.fa-chevron-right
 
   .mainbox__side-box__text 設定
-  = link_to do
+  = link_to '/users/show/profile' do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text プロフィール
       %i1.fa.fa-chevron-right
@@ -84,7 +84,7 @@
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text メール/パスワード
       %i1.fa.fa-chevron-right
-  = link_to do
+  = link_to identifications_path do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text 本人情報
       %i1.fa.fa-chevron-right
@@ -92,7 +92,7 @@
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text 電話番号の確認
       %i1.fa.fa-chevron-right
-  = link_to do
+  = link_to logouts_path do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text ログアウト
       %i1.fa.fa-chevron-right
