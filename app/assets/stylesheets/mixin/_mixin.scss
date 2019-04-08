@@ -115,3 +115,11 @@
     font-size: 19px;
   }
 }
+
+@mixin form-require {
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+}
