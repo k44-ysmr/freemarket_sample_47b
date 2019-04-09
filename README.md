@@ -30,7 +30,7 @@ Rails 5.2.2.1
 | price	| integer |	null: false
 | condition	| integer |	null: false |
 | shipping_fee | integer | null: false |
-| shipping_from |	integer |	null: false |
+| prefecture_id |	integer |	null: false |
 | days_before_shipping | integer | null: false |
 | shipping_method | integer	| null: false |
 | trade_status | integer | null: false |
