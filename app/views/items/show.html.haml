@@ -111,6 +111,18 @@
         %a{:href => "https://"}
           %i.fas.fa-lock
           %span あんしん・あんぜんへの取り組み
+
+.user-product
+  %a.user-product__edit.red-btn 商品の編集
+  %p.user-product__text-center or
+  %form
+    %input{:type => "hidden",}/
+    %button.user-product__stop.red-btn{:type => "submit"} 出品を再開する
+  %button.user-product__destroy{}
+    この商品を削除する
+
+  = render partial: "partial/deletebtn"
+
 .item-comment
   .item-comment__container
     .item-comment__container__view
