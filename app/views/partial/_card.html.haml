@@ -1,10 +1,10 @@
 = link_to '#', class: 'card' do
   .card__photo
-    = image_tag 'common/sample_shoe.jpg', alt: '商品画像'
+    = image_tag item.images.first.name.url, alt: '商品画像'
   .card__body
-    %h3.card__body__head すごい靴
+    %h3.card__body__head= item.name
     .card__body__content
-      .card__body__content__price  ¥1,800
+      .card__body__content__price= "¥#{number_with_delimiter(item.price)}"
       .card__body__content__like
         %i.far.fa-heart
         %span 2
