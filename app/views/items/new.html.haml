@@ -16,8 +16,8 @@
             %label.sell-form__upload__dropbox
 
               .sell-form__upload__dropitem#itemfile
-                = f.fields_for @item do |image|
-                  = image.file_field :name, name: "item[images_attributes][][name]",class: 'sell-form__upload__dropitem__file',multiple: "true"
+                = f.fields_for @item.images do |image|
+                  = image.file_field :name, name: "item[images_attributes][][name]",class: 'sell-form__upload__dropitem__file',multiple: true, accept: 'image/jpg,image/jpeg,image/png,image/gif'
                   %per.item0-message
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
