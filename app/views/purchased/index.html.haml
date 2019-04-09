@@ -1,0 +1,45 @@
+/ ヘッダー
+%header.header
+  = render partial: "partial/header"
+/ パンくずリスト
+
+/ メインコンテンツ
+.mainbox
+  .mainbox__margin
+
+    / サイドバー
+    .mainbox__side-box
+      = render partial: "users/side-contents"
+
+    / メインコンテンツ
+    .mainbox__purchase-box
+      購入した商品
+      .mainbox__purchase-box__menu
+        = link_to purchases_path do
+          .mainbox__purchase-box__menu__side 取引中
+        = link_to purchased_index_path do
+          .mainbox__purchase-box__menu__now 過去の取引
+
+      / 過去に取引した商品がある場合
+      .mainbox__purchase-box__item-tab
+        = link_to do
+          .mainbox__purchase-box__item-tab__box
+            .mainbox__purchase-box__item-tab__box__icon
+            .mainbox__purchase-box__item-tab__box__info 商品名
+            %i.fa.fa-chevron-right.arrowi
+
+      / 過去に取引した商品がない場合
+      /   .mainbox__purchase-box__item-tab__image-box
+      /   .mainbox__purchase-box__item-tab__image
+      /   .mainbox__purchase-box__item-tab__text 過去に取引した商品がありません
+
+
+/ バナー
+.banner
+  = render partial: "partial/banner"
+
+/フッター
+%footer.footer
+  = render partial: "partial/footer"
+/ 出品ボタン
+= render partial: "partial/sell-btn"

@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   resources :listings, only: [:index]
   resources :progressions, only: [:index]
   resources :completions, only: [:index]
+  resources :purchases, only: [:index]
+  resources :purchased, only: [:index]
 
 end
