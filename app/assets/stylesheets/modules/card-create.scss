@@ -11,9 +11,14 @@ body {
   margin: 24px auto 0;
   padding: 0 0 40px;
   display: flex;
+  &__margin {
+    display: flex;
+    margin: auto;
+  }
 }
 
   .l-content {
+    margin-left: 20px;
     float: none;
     width: 700px;
     &__container {

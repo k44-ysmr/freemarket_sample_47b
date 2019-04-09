@@ -4,7 +4,7 @@
   height: 1391px;
   display: flex;
   &__identify-contents {
-    margin-left: 120px;
+    margin-left: 40px;
     &__box {
       height: 1300px;
       width: 700px;
@@ -91,6 +91,8 @@
           width: 520px;
           border: solid 1px #ccc;
           border-radius: 5px;
+          text-indent: 10px;
+          outline: 0;
         }
         &__select {
           margin: 5px 60px;
@@ -106,6 +108,7 @@
           height: 48px;
           width: 520px;
           display: flex;
+          outline: 0;
           &__year {
             width: 160px;
           }
@@ -142,6 +145,7 @@
         font-size: 14px;
         text-align: center;
         line-height: 48px;
+        outline: 0;
       }
     }
   }

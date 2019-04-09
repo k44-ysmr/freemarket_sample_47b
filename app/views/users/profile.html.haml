@@ -9,19 +9,21 @@
 / メインコンテンツ
 %body
 .mainbox
-  / サイドバー
-  .mainbox__side-box
-    = render partial: "users/side-contents"
 
-  .mainbox__prof-contents
-    .mainbox__prof-contents__prof-box
-      .mainbox__prof-contents__prof-box__titlebox プロフィール
-      .mainbox__prof-contents__prof-box__iconbox
-        .mainbox__prof-contents__prof-box__iconbox__space
-        .mainbox__prof-contents__prof-box__iconbox__icon
-        %input.mainbox__prof-contents__prof-box__iconbox__name{:name => ' ', :placeholder => '', :type => 'text', :value =>'name'}
-      %textarea.mainbox__prof-contents__prof-box__commentbox{:name => ' ', :placeholder => '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'}
-      %button.mainbox__prof-contents__prof-box__button{:type => 'submit'} 変更する
+  .mainbox__margin
+    / サイドバー
+    .mainbox__side-box
+      = render partial: "users/side-contents"
+
+    .mainbox__prof-contents
+      .mainbox__prof-contents__prof-box
+        .mainbox__prof-contents__prof-box__titlebox プロフィール
+        .mainbox__prof-contents__prof-box__iconbox
+          .mainbox__prof-contents__prof-box__iconbox__space
+          .mainbox__prof-contents__prof-box__iconbox__icon
+          %input.mainbox__prof-contents__prof-box__iconbox__name{:name => ' ', :placeholder => '', :type => 'text', :value =>'name'}
+        %textarea.mainbox__prof-contents__prof-box__commentbox{:name => ' ', :placeholder => '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'}
+        %button.mainbox__prof-contents__prof-box__button{:type => 'submit'} 変更する
 
 / バナー
 .banner

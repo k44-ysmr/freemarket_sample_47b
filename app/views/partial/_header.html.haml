@@ -1,18 +1,40 @@
 .header__container
   .header__container__top
-    = link_to root_path, class: 'header__container__top__logo' do
-      = image_tag 'common/logo.svg', alt: 'logo', class: 'header__container__top__logo__image', height: '36', width: '134'
-      / 検索フォーム
-      / %i.fas.fa-search
+    .header__container__top__box
+      = link_to root_path, class: 'header__container__top__box__logo' do
+        = image_tag 'common/logo.svg', alt: 'logo', class: 'header__container__top__box__logo__image', height: '36', width: '134'
+
+      .header__container__top__box__searchbox
+        %input.input-search{name: "keyword", placeholder: "何かお探しですか？", :type => "search", :value => "" }
+          %i.fas.fa-search.grass
 
   .header__container__bottom
     %nav.header__container__bottom__nav
       .header__container__bottom__nav__category
         %i.fas.fa-list-ul
         = link_to 'カテゴリーから探す', class: 'header__container__bottom__nav__category__link'
+        .accordion
+          %ul.level-1
+            = render partial: 'partial/accordion'
+            %li.level-1__list
+              = link_to 'カテゴリー一覧', class: 'level-1__list__item'
       .header__container__bottom__nav__brand
         %i.fas.fa-tags
         = link_to 'ブランドから探す', class: 'header__container__bottom__nav__brand__link'
+        .accordion
+          %ul.level-1
+            %li.level-1__list
+              = link_to 'シャネル', class: 'level-1__list__item'
+            %li.level-1__list
+              = link_to 'ナイキ', class: 'level-1__list__item'
+            %li.level-1__list
+              = link_to 'シュプリーム', class: 'level-1__list__item'
+            %li.level-1__list
+              = link_to 'ルイ ヴィトン', class: 'level-1__list__item'
+            %li.level-1__list
+              = link_to 'アディダス', class: 'level-1__list__item'
+            %li.level-1__list
+              = link_to 'ブランド一覧', class: 'level-1__list__item'
     .header__container__bottom__user
       - if user_signed_in?
         = link_to '#', class: 'header__container__bottom__user__mypage' do

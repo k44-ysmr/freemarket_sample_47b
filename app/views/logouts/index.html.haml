@@ -6,15 +6,16 @@
 / メインコンテンツ
 %body
 .mainbox
-  / サイドバー
-  .mainbox__side-box
-    = render partial: "users/side-contents"
+  .mainbox__margin
+    / サイドバー
+    .mainbox__side-box
+      = render partial: "users/side-contents"
 
-  .mainbox__logout-contents
-    .mainbox__logout-contents__logout-box
-      .mainbox__logout-contents__logout-box__space
-      .mainbox__logout-contents__logout-box__btn
-        = link_to 'ログアウト', destroy_user_session_path, class: '.mainbox__logout-contents__logout-box__btn', method: :delete
+    .mainbox__logout-contents
+      .mainbox__logout-contents__logout-box
+        .mainbox__logout-contents__logout-box__space
+        .mainbox__logout-contents__logout-box__btn
+          = link_to 'ログアウト', destroy_user_session_path, class: '.mainbox__logout-contents__logout-box__btn', method: :delete
 
 
 / バナー

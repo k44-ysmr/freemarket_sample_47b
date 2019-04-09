@@ -1,0 +1,89 @@
+.accordion {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  z-index: 3;
+
+
+  .level-1 {
+    width: 200px;
+    display: none;
+
+
+    &__list {
+      position: relative;
+      height: 44px;
+      @include flex-vertical-center;
+      @include list-item;
+      a{
+        padding-left: 10px;
+        font-weight: normal;
+      }
+
+      &:hover {
+        background-color: $red;
+
+        &>a {
+          color: $white;
+        }
+      }
+      &:hover .level-2{
+        display: block;
+      }
+
+      .level-2 {
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 200px;
+        width: 200px;
+        background-color: $white;
+        box-shadow: 1px 0 0 0 $gray inset;
+
+        &__list {
+          position: relative;
+          height: 30px;
+          @include flex-vertical-center;
+          @include list-item;
+
+          &:hover {
+            background-color: $gray;
+            &>a {
+              color: $black;
+            }
+          }
+          &:hover .level-3{
+            display: block;
+          }
+
+          .level-3 {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 200px;
+            width: 320px;
+            box-shadow: 1px 0 0 0 $gray inset;
+            background-color: $white;
+            overflow: scroll;
+
+            &__list {
+              height: 30px;
+              @include flex-vertical-center;
+              @include list-item;
+
+              &:hover {
+                background-color: $gray;
+                &>a {
+                  color: $black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

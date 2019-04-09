@@ -67,15 +67,6 @@
 }
 
 
-.form-require{
-  background: #ea352d;
-  margin: 0 0 0 8px;
-  padding: 2px 4px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  // vertical-align: top;
-}
 
 p{
   margin: 8px 0 0;
@@ -125,7 +116,21 @@ p{
     padding-top: 20px;
     font-weight: 600;
     display: inline-block;
+    .form-require{
+      background: #ea352d;
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      // vertical-align: top;
+    }
   }
+}
+
+.form-any{
+  background: #ccc;
+  @include form-require
 }
 
 .input-default{
@@ -258,4 +263,3 @@ p{
     border-radius: 15px;
   }
 }
-

@@ -20,23 +20,23 @@
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text 出品する
       %i1.fa.fa-chevron-right
-  = link_to do
+  = link_to listings_path do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text 出品した商品-出品中
       %i1.fa.fa-chevron-right
-  = link_to do
+  = link_to progressions_path do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text 出品した商品-取引中
       %i1.fa.fa-chevron-right
-  = link_to do
+  = link_to completions_path do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text 出品した商品-売却済み
       %i1.fa.fa-chevron-right
-  = link_to do
+  = link_to purchases_path do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text 購入した商品-取引中
       %i1.fa.fa-chevron-right
-  = link_to do
+  = link_to purchased_index_path do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text 購入した商品-過去の取引
       %i1.fa.fa-chevron-right
@@ -68,7 +68,7 @@
       %i1.fa.fa-chevron-right
 
   .mainbox__side-box__text 設定
-  = link_to do
+  = link_to '/users/show/profile' do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text プロフィール
       %i1.fa.fa-chevron-right
