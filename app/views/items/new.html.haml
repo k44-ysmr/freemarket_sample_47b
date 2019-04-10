@@ -13,15 +13,16 @@
               出品画像
               %span.form-require 必須
             %p 最大10枚までアップロードできます
-            %label.sell-form__upload__dropbox
-
-              .sell-form__upload__dropitem#itemfile
-                = f.fields_for @item.images do |image|
-                  = image.file_field :name, name: "item[images_attributes][][name]",class: 'sell-form__upload__dropitem__file',multiple: true, accept: 'image/jpg,image/jpeg,image/png,image/gif'
-                  %per.item0-message
-                    ドラッグアンドドロップ
-                    またはクリックしてファイルをアップロード
-                    %i.icon-camera
+            .flex-box
+              %div#imgfile{onclick:"$('#file').click()"}
+              %label.sell-form__upload__dropbox
+                .sell-form__upload__dropitem
+                  = f.fields_for @item.images do |image|
+                    = image.file_field :name, name: "item[images_attributes][][name]",class: 'sell-form__upload__dropitem__file',multiple: true, accept: 'image/jpg,image/jpeg,image/png,image/gif',id: 'file'
+                    %per.item0-message
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                      %i.icon-camera
 
           .sell-content
             .form-group
