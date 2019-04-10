@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @name = current_user.nickname
   end
 
 
