@@ -32,6 +32,7 @@ Rails 5.2.2.1
 
 - has_many :items
 - has_many :trading_partners
+- has_many :sns_credentials
 
 ## sns_credentials TB
 
