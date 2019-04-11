@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_signin, except: :index
+
   def index
   end
 
@@ -11,6 +13,5 @@ class UsersController < ApplicationController
 
   def profile
   end
-
 
 end
