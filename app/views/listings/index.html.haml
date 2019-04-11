@@ -21,12 +21,12 @@
           .mainbox__listing-box__menu__side 取引中
         = link_to completions_path do
           .mainbox__listing-box__menu__side 売却済み
-      - if user_signed_in?
-        .mainbox__listing-box__item-tab
+      - if @items.present?
+        - @items.each do |item|
           = link_to do
             .mainbox__listing-box__item-tab__box
-              .mainbox__listing-box__item-tab__box__icon
-              .mainbox__listing-box__item-tab__box__info current_item_name
+              = image_tag item.images.first.name.url, class: 'mainbox__listing-box__item-tab__box__icon'
+              .mainbox__listing-box__item-tab__box__info= item.name
               %i.fa.fa-chevron-right.arrowi
       - else
         .mainbox__listing-box__item-tab
