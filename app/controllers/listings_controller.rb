@@ -1,6 +1,5 @@
 class ListingsController < ApplicationController
 
-  before_action :move_to_index
 
   def index
     @nickname = current_user.nickname
@@ -8,8 +7,9 @@ class ListingsController < ApplicationController
   end
 
   private
-  def move_to_index
-    redirect_to controller: :users, action: :index unless user_signed_in?
+  def use_before_action?
+    true
   end
+
 
 end
