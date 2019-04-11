@@ -1,11 +1,7 @@
 class IdentificationsController < ApplicationController
+  before_action :require_signin
 
   def index
-  end
-
-  private
-  def use_before_action?
-    true
   end
 
 end
