@@ -33,6 +33,17 @@ Rails 5.2.2.1
 - has_many :items
 - has_many :trading_partners
 
+## sns_credentials TB
+
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| uid | string | null: false, unique: true |
+| provider | string | null: false |
+| token | text | -- |
+| user_id | references | null: false, index: true, foreign_key: true |
+
+- belongs_to :user
+
 ## items TB
 
 | Column | Type | Options |
