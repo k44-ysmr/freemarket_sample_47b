@@ -26,8 +26,8 @@ Rails 5.2.2.1
 | birth_year | integer | -- |
 | birth_month | integer | -- |
 | birth_day | integer | -- |
-| phone_number | integer | -- |
-| zipcode | integer | -- |
+| phone_number | string | -- |
+| zipcode | string | -- |
 | prefecture | integer | -- |
 
 - has_many :items
