@@ -19,15 +19,21 @@
           font-size: 22px;
           line-height: 1.5;
           text-align: center;
+          font-weight: 600;
         }
         .sell-form{
           border-top: 1px solid #eee;
           &__upload{
             width: 620px;
-            padding: 40px;
+            padding: 40px 0 40px 0;
             box-sizing: inherit;
+            margin: 0 auto;
             &__head{
               font-size: 16px;
+              display: flex;
+              font-weight: 600;
+              padding-top: 20px;
+              display: inline-block;
             }
             &__dropbox{
               display: block;
@@ -116,16 +122,17 @@ p{
     padding-top: 20px;
     font-weight: 600;
     display: inline-block;
-    .form-require{
-      background: #ea352d;
-      margin: 0 0 0 8px;
-      padding: 2px 4px;
-      border-radius: 2px;
-      color: #fff;
-      font-size: 12px;
-      // vertical-align: top;
-    }
   }
+}
+
+.form-require{
+  background: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  // vertical-align: top;
 }
 
 .form-any{
@@ -262,4 +269,19 @@ p{
     display: block;
     border-radius: 15px;
   }
+}
+
+.flex-box{
+  display: flex;
+}
+
+.preview-image{
+  float: left;
+  flex: 1;
+  width: 116px;
+  margin: 20px 15px 0px 0px;
+  border: 1px solid #eee;
+  display: inline-block;
+  margin-left: 0;
+  min-height: 116px;
 }
