@@ -11,12 +11,14 @@
         %section.buy-content
           .buy-content__inner
             %h3.buy-content-image
-              = image_tag 'https://static.mercdn.net/thumb/photos/m10925107469_1.jpg?1553928587', alt: '', class: 'buy-content-image__file'
-            %p.buy-content__inner__bold 横向きの女性！（選択した商品名を表示）
+              = image_tag @item.images.first.name.url , class: 'buy-content-image__file'
+            %p.buy-content__inner__bold
+              = @item.name
 
-            %form.buy-content__inner__form{ action: "", method: "POST", }
+            / %form.buy-content__inner__form{ action: "", method: "POST", }
+            = form_tag(action: :create, method: :post, class: 'buy-content__inner__form') do
               %p.buy-price
-                ¥ -,---
+                = "¥ #{@item.price}"
                 %span.buy-price__shipping 送料込み
 
                 / accordion
@@ -49,14 +51,16 @@
                 %li.buy-cost__inner.bold
                   .buy-cost__inner__left 支払い金額
                   .buy-cost__inner__right
-                    %span{"data-buy-pay": "2500"} ¥ 200,500
+                    %span{"data-buy-pay": "#{@item.price}"}
+                    = "¥ #{@item.price}"
               / %input{name: "seller_id", type: "hidden", value: ""}/
               / %input{name: "payment_fee", type: "hidden", value: "0"}/
               / %input{name: "payment_amount", type: "hidden", value: "2500"}/
 
               / error
-              %p.buy-error-text 配送先と支払い方法の入力を完了してください。
-              %button.buy-btn.bold{disabled: "disabled", type: "submit"} 購入する
+              / %p.buy-error-text 配送先と支払い方法の入力を完了してください。
+              / %button.buy-btn.bold{disabled: "disabled", type: "submit"} 購入する
+              = button_tag '購入する', class: 'buy-btn'
               %input#user_info_is_not_complete{type: "hidden"}/
 
       %section.buy-user-info
@@ -68,7 +72,7 @@
             東京都 ネズミの国は千葉県
             7-7-777
             %br/
-            ねずみ　太郎
+            = current_user.nickname
           %p.buy-user-info__inner__text
           = link_to '#', class: 'buy-user-info__inner__fix' do
             %span 変更する
