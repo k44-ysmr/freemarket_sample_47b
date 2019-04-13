@@ -51,8 +51,7 @@
                 %li.buy-cost__inner.bold
                   .buy-cost__inner__left 支払い金額
                   .buy-cost__inner__right
-                    %span{"data-buy-pay": "#{@item.price}"}
-                    = "¥ #{@item.price}"
+                    %span= "¥ #{@item.price}"
               / %input{name: "seller_id", type: "hidden", value: ""}/
               / %input{name: "payment_fee", type: "hidden", value: "0"}/
               / %input{name: "payment_amount", type: "hidden", value: "2500"}/
