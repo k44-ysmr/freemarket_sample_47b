@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   resources :users do
     get 'profile'
   end
-  resources :items
-  resources :buys
+  resources :items do
+    resources :buys
+  end
   resources :credit_card
 
   resources :identifications, only: [:index]
