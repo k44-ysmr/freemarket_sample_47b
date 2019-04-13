@@ -2,7 +2,6 @@ class BuysController < ApplicationController
   before_action :authenticate_user!, only: [ :index, :create]
   before_action :set_buys, only: [ :index, :create]
   def index
-    # @item = Item.find(params[:item_id])
   end
 
   def create
@@ -24,7 +23,6 @@ private
   def set_buys
     @item = Item.find(params[:item_id])
     @images = @item.images
-    # @user = User.where(id: current_user)
   end
 
   def create_purchase_history(item)
