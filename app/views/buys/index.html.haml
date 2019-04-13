@@ -11,7 +11,7 @@
         %section.buy-content
           .buy-content__inner
             %h3.buy-content-image
-              = image_tag @item.images.first.name.url , class: 'buy-content-image__file'
+              = image_tag @images.first.name.url , class: 'buy-content-image__file'
             %p.buy-content__inner__bold
               = @item.name
 
