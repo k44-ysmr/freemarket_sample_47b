@@ -47,6 +47,7 @@
       padding: 16px;
       position: relative;
       cursor: pointer;
+      border-radius: 15px;
       .fa-chevron-down{
         font-size: 16px;
         display: inline-block;
@@ -61,6 +62,7 @@
       padding: 24px 40px;
       background: #fafafa;
       text-align: left;
+      display: none;
     }
     .buy-form-group{
       margin: 0;
@@ -141,14 +143,15 @@ font-size: 14px;
 
 .buy-btn{
   margin: 16px 0 0;
-  border: 1px solid #888;
-  background: #888;
+  border: 1px solid $red;
+  background: $red;
   color: #fff;
   display: block;
   width: 100%;
   line-height: 48px;
   font-size: 14px;
   text-align: center;
+  border-radius: 15px;
 }
 
 .buy-user-info{
