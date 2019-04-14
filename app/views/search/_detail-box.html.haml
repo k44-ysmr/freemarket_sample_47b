@@ -1,0 +1,25 @@
+.mainbox__category-box__detail-box__element-box
+  %i.fas.fa-plus.details-icon
+  .mainbox__category-box__detail-box__element-box-text キーワードを追加する
+%input.mainbox__category-box__detail-box__inputbox{:name => ' ', :placeholder => '例) 値下げ', :type => 'text', :value => ''}
+.mainbox__category-box__detail-box__element-box
+  %i.fas.fa-list.details-icon
+  .mainbox__category-box__detail-box__element-box-text カテゴリーを選択する
+%input.mainbox__category-box__detail-box__inputbox{:name => ' ', :type => 'text', :value => ''}
+.mainbox__category-box__detail-box__element-box
+  %i.fas.fa-tag.details-icon
+  .mainbox__category-box__detail-box__element-box-text ブランド名から探す
+%input.mainbox__category-box__detail-box__inputbox{:name => ' ', :type => 'text', :value => ''}
+.mainbox__category-box__detail-box__element-box
+  %i.fas.fa-expand.details-icon
+  .mainbox__category-box__detail-box__element-box-text サイズを指定する
+%input.mainbox__category-box__detail-box__inputbox{:name => ' ', :type => 'text', :value => ''}
+.mainbox__category-box__detail-box__element-box
+  %i.fas.fa-coins.details-icon
+  .mainbox__category-box__detail-box__element-box-text 価格
+= collection_select :hoge , :hogehoge, Price.all, :id, :name, {prompt: true}, {class: "select_price"}
+%i.fa.fa-chevron-down.sort-arrowp
+.mainbox__category-box__detail-box__price-box
+  %input.mainbox__category-box__detail-box__price-box__money{:name => ' ', :placeholder => '¥ Min', :type => 'text', :value => ''}
+  .mainbox__category-box__detail-box__price-box__text ~
+  %input.mainbox__category-box__detail-box__price-box__money{:name => ' ', :placeholder => '¥ Max', :type => 'text', :value => ''}

@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   resources :completions, only: [:index]
   resources :purchases, only: [:index]
   resources :purchased, only: [:index]
+  resources :search, only: [:index]
 
 end
