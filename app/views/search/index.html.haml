@@ -1,0 +1,74 @@
+-# ページタイトル
+- content_for(:title) { 'マイページ メルカリ' }
+
+/ ヘッダー
+%header.header
+  = render partial: "partial/header"
+/ パンくずリスト
+
+/ メインコンテンツ
+%body
+.mainbox
+  .mainbox__margin
+    / サイドバー
+    .mainbox__category-box
+      = collection_select :fuga, :fugafuga, Sort.all, :id, :name, {prompt: true}, {class: "select_sort"}
+      %i.fa.fa-chevron-down.sort-arrow
+      .mainbox__category-box__detail-box
+        詳細検索
+        = render partial: 'search/detail-box'
+        = render partial: 'search/check-box'
+        .mainbox__category-box__detail-box__btn
+          .mainbox__category-box__detail-box__btn__clear クリア
+          =link_to do
+            .mainbox__category-box__detail-box__btn__go 完了
+
+    / メインコンテンツ
+    .mainbox__main-contents
+
+      - if @items.present?
+        .mainbox__main-contents__search-result
+          .mainbox__main-contents__search-result__head 検索結果 1 - #{@items.length} 件
+        .mainbox__main-contents__cards-box
+          - @items.each do |item|
+            = link_to '#', class: 'mainbox__main-contents__card' do
+              .mainbox__main-contents__card
+                = image_tag item.images.first.name.url, class: 'mainbox__main-contents__card__image'
+                .mainbox__main-contents__card__body
+                  .mainbox__main-contents__card__body__head= item.name
+                  .mainbox__main-contents__card__body__content
+                    .mainbox__main-contents__card__body__content__price= "¥#{number_with_delimiter(item.price)}"
+                    .mainbox__main-contents__card__body__content__like
+                      %i.far.fa-heart
+                      %span 2
+                    .mainbox__main-contents__card__body__content__tax (税込)
+        = paginate(@items)
+
+      - else
+        .mainbox__main-contents__search-result
+          .mainbox__main-contents__search-result__head 検索結果 0件
+          .mainbox__main-contents__search-result__text 該当する商品が見つかりません。商品は毎日増えていますので、これからの出品に期待してください
+        .mainbox__main-contents__new 新着商品
+        .mainbox__main-contents__cards-box
+          - @itemsall.each do |item|
+            = link_to '#', class: 'mainbox__main-contents__card' do
+              .mainbox__main-contents__card
+                = image_tag item.images.first.name.url, class: 'mainbox__main-contents__card__image'
+                .mainbox__main-contents__card__body
+                  .mainbox__main-contents__card__body__head= item.name
+                  .mainbox__main-contents__card__body__content
+                    .mainbox__main-contents__card__body__content__price= "¥#{number_with_delimiter(item.price)}"
+                    .mainbox__main-contents__card__body__content__like
+                      %i.far.fa-heart
+                      %span 2
+                    .mainbox__main-contents__card__body__content__tax (税込)
+
+/ バナー
+.banner
+  = render partial: "partial/banner"
+
+/フッター
+%footer.footer
+  = render partial: "partial/footer"
+/ 出品ボタン
+= render partial: "partial/sell-btn"

@@ -1,0 +1,319 @@
+.mainbox {
+  padding-top: 80px;
+  background-color: $gray-back;
+  height: 1500px;
+  &__category-box {
+    height: 1400px;
+    width: 280px;
+    font-color: black;
+    font-size: 16px;
+    &__detail-box {
+      margin-top: 40px;
+      margin-left: 5px;
+      height: 1200px;
+      width: 280px;
+      background-color: white;
+      padding: 10px;
+      font-weight: bold;
+      &__inputbox {
+        margin: 5px;
+        height: 48px;
+        width: 250px;
+        border: solid 1px #ccc;
+        border-radius: 5px;
+        text-indent: 10px;
+        font-weight: lighter;
+        outline: none;
+      }
+      &__element-box {
+        margin-top: 25px;
+        display: flex;
+      }
+      &__price-box {
+        margin-top: 10px;
+        display: flex;
+        &__money {
+          height: 48px;
+          width: 115px;
+          border: solid 1px #ccc;
+          border-radius: 5px;
+          text-indent: 10px;
+          font-weight: lighter;
+          outline: none;
+        }
+        &__text {
+          margin: 20px 10px;
+          font-size: 12px;
+          font-weight: lighter;
+        }
+      }
+      &__checkbox {
+        margin: 10px 2px 0 5px;
+        height: 30px;
+        width: 120px;
+        float: left;
+        display: flex;
+        &__text {
+          font-weight: lighter;
+          float: left;
+          font-size: 14px;
+          padding: 0 10px;
+        }
+      }
+      &__check-title1 {
+        margin-top: 190px;
+        width: 240px;
+        clear: both;
+        display: flex;
+      }
+      &__check-title2 {
+        margin-top: 120px;
+        width: 240px;
+        clear: both;
+        display: flex;
+      }
+      &__btn {
+        margin: 0 auto;
+        margin: 110px 10px 10px 10px;
+        clear: both;
+        display: flex;
+        &__clear {
+          height: 48px;
+          width: 45%;
+          background-color: #ccc;
+          line-height: 48px;
+          font-weight: lighter;
+          text-align: center;
+          color: white;
+        }
+        &__go {
+          margin-left: 20px;
+          height: 48px;
+          width: 110px;
+          background-color: red;
+          line-height: 48px;
+          font-weight: lighter;
+          text-align: center;
+          color: white;
+        }
+      }
+    }
+  }
+  &__main-contents {
+    margin-left: 40px;
+    height: 1350px;
+    width: 740px;
+    &__search-result {
+      height: 40px;
+      &__head {
+        font-size: 22px;
+        font-weight: 400px;
+      }
+      &__text {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    }
+    &__cards-box {
+      height: 1150px;
+      width: 740px;
+    }
+    &__card {
+      float: left;
+      margin-bottom: 20px;
+      margin-right: 20px;
+      height: 265px;
+      width: 165px;
+      background-color: white;
+      &__image {
+        height: 165px;
+        width: 165px;
+      }
+      &__body {
+        width: 100%;
+        height: 100px;
+        padding: 16px;
+        color: $black;
+        &__head {
+          position: relative;
+          width: 100%;
+          height: 24px;
+          overflow: hidden;
+        }
+        &__content {
+          position: relative;
+          width: 100%;
+          height: 30px;
+          margin-top: 8px;
+          font-size: 12px;
+          &__price {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            height: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1;
+          }
+          &__like {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: inline-block;
+            @include flex-vertical-center;
+
+            i {
+              display: inline-block;
+              color: #ccc;
+              font-size: 16px;
+            }
+
+            span {
+              margin-left: 8px;
+              font-size: 14px;
+            }
+          }
+          &__tax {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 8px;
+          }
+        }
+      }
+    }
+    &__new {
+      font-weight: bold;
+      font-size: 22px;
+      margin: 50px 0 10px 0;
+    }
+  }
+
+  .select_sort {
+    padding: 10px;
+    height: 48px;
+    width: 280px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    background-color: white;
+    outline: 0;
+  }
+  .select_price {
+    padding: 10px;
+    height: 48px;
+    width: 250px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    background-color: white;
+    outline: 0;
+    font-weight: lighter;
+  }
+  .sort-arrow {
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 250px;
+    font-size: 18px;
+    color: gray;
+  }
+  .sort-arrowp {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: -30px;
+    font-size: 18px;
+    color: gray;
+  }
+  .details-icon {
+    color: gray;
+    margin: 3px 10px 0 10px;
+  }
+
+  .pagination {
+  height: 50px;
+  margin: auto 0;
+  }
+  .page {
+    position: relative;
+    float: left;
+    height: 44px;
+    width: 44px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    line-height: 44px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    &:hover {
+      background-color: $gray;
+    }
+  }
+  .current {
+    margin-left: 40%;
+    background-color: red;
+    color: black;
+    &:hover {
+      background-color: red;
+    }
+  }
+  .first {
+    position: relative;
+    float: left;
+    margin: 0 0 0 0;
+    height: 44px;
+    width: 44px;
+    background-color: white;
+    text-align: center;
+    line-height: 44px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    &:hover {
+      background-color: $gray;
+    }
+  }
+  .prev {
+    position: relative;
+    float: left;
+    margin: 0 200px 0 0;
+    height: 44px;
+    width: 44px;
+    background-color: white;
+    text-align: center;
+    line-height: 44px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    &:hover {
+      background-color: $gray;
+    }
+  }
+  .next {
+    position: absolute;
+    margin: 0 0 0 200px;
+    float: left;
+    height: 44px;
+    width: 44px;
+    background-color: white;
+    text-align: center;
+    line-height: 44px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    &:hover {
+      background-color: $gray;
+    }
+  }
+  .last {
+    position: absolute;
+    margin: 0 0 0 246px;
+    float: left;
+    height: 44px;
+    width: 44px;
+    background-color: white;
+    text-align: center;
+    line-height: 44px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    &:hover {
+      background-color: $gray;
+    }
+  }
+}

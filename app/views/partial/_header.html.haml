@@ -5,8 +5,10 @@
         = image_tag 'common/logo.svg', alt: 'logo', class: 'header__container__top__box__logo__image', height: '36', width: '134'
 
       .header__container__top__box__searchbox
-        %input.input-search{name: "keyword", placeholder: "何かお探しですか？", :type => "search", :value => "" }
-          %i.fas.fa-search.grass
+        = form_tag('/search', method: :get) do
+          %input.input-search{name: "keyword", placeholder: "何かお探しですか？", :type => "text", :value => "" }
+          %button.btn-search{title: '検索', type: 'submit'}
+            %i.fas.fa-search.grass
 
   .header__container__bottom
     %nav.header__container__bottom__nav
