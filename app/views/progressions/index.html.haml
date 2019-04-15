@@ -19,11 +19,20 @@
           .mainbox__listing-box__menu__now 取引中
         = link_to completions_path do
           .mainbox__listing-box__menu__side 売却済み
-      .mainbox__listing-box__item-tab
-        .mainbox__listing-box__item-tab__image-box
-        .mainbox__listing-box__item-tab__image
-        .mainbox__listing-box__item-tab__text 取引中の商品がありません
-      .mainbox__listing-box__pager-box
+
+      - if @items.present?
+        - @items.each do |item|
+          = link_to do
+            .mainbox__listing-box__item-tab__box
+              = image_tag item.images.first.name.url, class: 'mainbox__listing-box__item-tab__box__icon'
+              .mainbox__listing-box__item-tab__box__info= item.name
+              %i.fa.fa-chevron-right.arrowi
+      - else
+        .mainbox__listing-box__item-tab
+          .mainbox__listing-box__item-tab__image-box
+          .mainbox__listing-box__item-tab__image
+          .mainbox__listing-box__item-tab__text 取引中の商品がありません
+
         = render partial: 'listings/listings-pager'
 
 / バナー

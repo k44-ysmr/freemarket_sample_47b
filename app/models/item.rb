@@ -23,4 +23,11 @@ enum shipping_fee: { shipping_included: 1, shippinng_separately: 2}
 enum shipping_method: { undecided: 1, mercari: 2, kuroneko: 3, yu_pack: 4}
 
 enum days_before_shipping: { two_days: 1, four_days: 2, seven_days: 3}
+
+# trade_status、status メモ
+# 1,出品中
+# 2,停止中
+# 3,取引中
+# 4,売却済
+
 end

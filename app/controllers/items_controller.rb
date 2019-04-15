@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
 
 before_action :set_item, only: [:show, :destroy, :update]
 
@@ -38,8 +39,9 @@ before_action :set_item, only: [:show, :destroy, :update]
   end
 
   private
+
     def item_params
-      params.require(:item).permit(:name, :description,:price,:condition,:shipping_fee,:shipping_from,:days_before_shipping,:shipping_method,:trade_status,:prefecture_id,:brand_id,:category_id,:size_id,images_attributes: [:id,:name]).merge(user_id: current_user.id)
+      params.require(:item).permit(:name, :description,:price,:condition,:shipping_fee,:days_before_shipping,:shipping_method,:trade_status,:prefecture_id,:brand_id,:category_id,:size_id,images_attributes: [:id,:name]).merge(user_id: current_user.id)
     end
 
     def set_item
