@@ -29,9 +29,8 @@
         %tr
           %th 出品者
           %td
-            %a{:href => ""}
-              = link_to "#{@item.user.nickname}", '#'
-            %div.item-information
+            = link_to "#{@item.user.nickname}", '#'
+            .item-information
               .item-information__user-ratings
                 %i.fas.fa-laugh
                 %span 52
