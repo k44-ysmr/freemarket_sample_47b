@@ -1,4 +1,4 @@
-= link_to '#', class: 'card' do
+= link_to item_path(item.id), class: 'card' do
   .card__photo
     = image_tag item.images.first.name.url, alt: '商品画像'
   .card__body

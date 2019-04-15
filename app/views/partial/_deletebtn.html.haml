@@ -6,5 +6,5 @@
     .delete-modal__under
       .delete-modal__under__left キャンセル
       .delete-modal__under__right
-        = link_to item_path(), method: :delete do
+        = link_to item_path(@item.id), method: :delete do
           削除する

@@ -4,6 +4,9 @@
     padding: 0;
   }
 
+
+
+
 .red-btn{
   margin: 16px 0 16px 0;
   background: #ea352d;
@@ -33,10 +36,25 @@
     font-size: 16px;
     text-align: center;
   }
-  &__destroy{
+  .user-product__stop{
     margin: 16px 0 16px 0;
     background: #aaa;
     border: 1px solid #aaa;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+  }
+  &__destroy{
+    margin: 16px 0 16px 0;
+    background: $gray-black;
+    border: 1px solid $gray-black;
     color: #fff;
     display: block;
     width: 100%;

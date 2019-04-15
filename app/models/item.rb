@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   belongs_to_active_hash :prefecture
+  # delegate :name, to: :prefecture
   belongs_to :category, optional: true
   belongs_to :brand, optional: true
   belongs_to :user
