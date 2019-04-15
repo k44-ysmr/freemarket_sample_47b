@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $gray-back;
+}
+
+.mainbox {
+  margin: 24px auto 0;
+  padding: 0 0 40px;
+  display: flex;
+  &__margin {
+    display: flex;
+    margin: auto;
+  }
+}
+
+  .l-content {
+    margin-left: 20px;
+    float: none;
+    width: 700px;
+    &__container {
+      background-color: $white;
+      &__head {
+        font-size: 24px;
+        padding: 8px 24px;
+        border-bottom: 1px solid $gray-back;
+        text-align: center;
+        line-height: 1.4;
+        font-weight: bold;
+      }
+      .l-single {
+          padding: 64px;
+          border-top: 1px solid $gray-back;
+        &__content {
+          max-width: 320px;
+          margin: 0 auto;
+          .form-group {
+            margin: 0;
+            label {
+              font-weight: 600;
+              display: inline-block;
+            }
+            &__require {
+              background-color: $red;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: $white;
+              font-size: 12px;
+            }
+            &__card-list {
+              margin: 8px 0 0;
+              font-size: 0;
+              li {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 5px;
+              }
+            }
+          }
+          .expiration-date {
+            margin: 40px 0 0;
+            &__name {
+              font-weight: bold;
+            }
+            .select-wrap {
+              display: inline-block;
+              width: 35%;
+              margin: 8px 0 0;
+              .select-default {
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+              }
+              .fa-chevron-down{
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                z-index: 2;
+                color: #888;
+                font-size: 8px;
+                transform: translate(0, -50%);
+              }
+            }
+            span {
+              margin: 0 8px;
+            }
+          }
+            &__signup-seqcode{
+              position: relative;
+              margin: 8px 0 0;
+              &__text {
+                text-align: right;
+                color: $light-blue;
+              }
+            }
+          &__btn-default {
+            margin: 40px 0 0;
+            background-color: $red;
+            border: 1px solid $red;
+            color: $white;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
