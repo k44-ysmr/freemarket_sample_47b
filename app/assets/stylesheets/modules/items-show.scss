@@ -156,7 +156,18 @@ body {
         font-size: 16px;
       }
     }
-
+    .item-none {
+      cursor: not-allowed;
+      height: 60px;
+      line-height: 60px;
+      display: block;
+      margin: 16px 0 0;
+      background-color: $gray-black;
+      color: $white;
+      text-align: center;
+      font-weight: 600;
+      font-size: 24px;
+    }
     .item-buy-btn {
       cursor: not-allowed;
       height: 60px;
