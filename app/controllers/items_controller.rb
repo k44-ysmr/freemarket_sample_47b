@@ -26,13 +26,22 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(trade_status: start_or_stop_displaying_params[:trade_status])
-    redirect_to item_path(@item)
+    begin
+      @item.update(trade_status: start_or_stop_displaying_params[:trade_status])
+      redirect_to item_path(@item)
+    rescue Exception => e
+      puts e
+    end
+
   end
 
   def destroy
-    @item.destroy if @item.user_id === current_user.id
-    redirect_to root_path
+    begin
+      @item.destroy if @item.user_id === current_user.id
+      redirect_to root_path
+    rescue Exception => e
+      puts e
+    end
   end
 
   def search
