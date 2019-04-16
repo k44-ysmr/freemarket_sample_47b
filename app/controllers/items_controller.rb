@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :destroy, :update]
 
+  before_action :set_prefecture, only: [:show]
+
   def index
     @items = Item.all.includes(:user).limit(4).order("created_at DESC")
   end
@@ -35,11 +37,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.user_id === current_user.id
-      @item.destroy
-    else
-      redirect_to root_path
-    end
+    @item.destroy if @item.user_id === current_user.id
     redirect_to root_path
   end
 
@@ -54,6 +52,9 @@ class ItemsController < ApplicationController
 
     def set_item
       @item = Item.find(params[:id])
+    end
+
+    def set_prefecture
       @prefecture = Prefecture.find(@item.prefecture_id)
     end
 
