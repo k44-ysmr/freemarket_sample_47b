@@ -122,7 +122,6 @@
   .user-product
     %a.user-product__edit.red-btn 商品の編集
     %p.user-product__text-center or
-    / %button.user-product__stop.red-btn{:type => "submit"} 出品を再開する
     = button_to '出品を再開する', item_path(@item, trade_status: 1), method: :put, class: 'red-btn' if @item.trade_status == 2
     = button_to '商品を一旦停止する', item_path(@item, trade_status: 2), method: :put, class: 'user-product__stop' if @item.trade_status == 1
     %button.user-product__destroy
@@ -132,31 +131,6 @@
 
 .item-comment
   .item-comment__container
-    / .item-comment__container__view
-    /   %ul.message
-    /     %li.message__content
-    /       %a.message__content__user{:href => ""}
-    /         %figure.message-user
-    /           .message-user__photo
-    /             = image_tag 'common/sample_shoe.jpg', alt: '商品画像'
-    /           %figcaption.bold
-    /             ユーザー
-    /       .message__content__body
-    /         .message__content__body__text
-    /           コメント失礼します。
-    /           %br/
-    /           すごいとはどのようにすごいのですか？
-    /         .message__content__body__icons
-    /           %time.message__content__body__icons__left
-    /             %i.fas.fa-clock
-    /             %span 9 時間前
-    /           .message__content__body__icons__right
-    /             %form{}
-    /               %button{:type => "submit"}
-    /                 %i.fas.fa-flag
-    /               %input{:type => "hidden"}/
-    /         %i.fas.fa-balloon
-
     .item-comment__container__content
       %form.item-comment__container__content__form
         %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
@@ -194,29 +168,6 @@
       %a.share-btn{}
         %i.fas.fa-pinterest-square
 
-
-/ .other-items
-/   %section.other-items__user
-/     %h2.items-box-head
-/       %a{:href => ""} ユーザーさんのその他の出品
-/     .items-boxs
-/       %section.items-box
-/         = render partial: 'partial/card'
-/       %section.items-box2
-/         = render partial: 'partial/card'
-/       %section.items-box3
-/         = render partial: 'partial/card'
-/   %section.other-items__category
-/     %h2.items-box-head
-/       %a{:href => ""}
-/         メンズのシューズ その他の商品
-/     .items-boxs
-/       %section.items-box
-/         = render partial: 'partial/card'
-/       %section.items-box2
-/         = render partial: 'partial/card'
-/       %section.items-box3
-/         = render partial: 'partial/card'
 / バナー
 .banner
   = render partial: "partial/banner"
