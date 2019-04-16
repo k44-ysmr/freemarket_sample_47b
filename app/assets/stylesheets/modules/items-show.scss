@@ -394,29 +394,31 @@ body {
   margin: 24px auto 0;
   width: 700px;
   height: 28px;
-  &__prev {
-    width: 45%;
-    position: relative;
-    word-wrap: break-word;
-    float: left;
-    padding: 0 0 0 14px;
-    a {
-      color: $light-blue;
-      text-decoration: none;
+
+    &__prev {
+      width: 45%;
+      position: relative;
+      word-wrap: break-word;
+      float: left;
+      padding: 0 0 0 14px;
+      a {
+        color: $light-blue;
+        text-decoration: none;
+      }
     }
-  }
-  &__next {
-    width: 45%;
-    position: relative;
-    word-wrap: break-word;
-    float: right;
-    padding: 0 14px 0 0;
-    text-align: right;
-    a {
-      color: $light-blue;
-      text-decoration: none;
+
+    &__next {
+      width: 45%;
+      position: relative;
+      word-wrap: break-word;
+      float: right;
+      padding: 0 14px 0 0;
+      text-align: right;
+      a {
+        color: $light-blue;
+        text-decoration: none;
+      }
     }
-  }
 }
 
 .item-social-media-box {

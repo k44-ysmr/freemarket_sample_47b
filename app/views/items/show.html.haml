@@ -124,8 +124,7 @@
     %p.user-product__text-center or
     = button_to '出品を再開する', item_path(@item, trade_status: 1), method: :put, class: 'red-btn' if @item.trade_status == 2
     = button_to '商品を一旦停止する', item_path(@item, trade_status: 2), method: :put, class: 'user-product__stop' if @item.trade_status == 1
-    %button.user-product__destroy
-      この商品を削除する
+    .user-product__destroy この商品を削除する
 
     = render partial: "partial/deletebtn"
 
@@ -138,14 +137,14 @@
         %button.item-comment__container__content__form__submit{:type => "submit"}
           %span コメントする
 
-%ul.item-link-prev-next
-  %li.item-link-prev-next__prev
-    %a
+.item-link-prev-next
+  = link_to '#' do
+    .item-link-prev-next__prev
       %i.fas.fa-chevron-left
-      すごい靴
-  %li.item-link-prev-next__next
-    %a
-      天然石
+      %a すごい靴
+  = link_to '#' do
+    .item-link-prev-next__next
+      %a 天然石
       %i.fas.fa-chevron-right
 
 
@@ -156,16 +155,16 @@
         %iframe{:style => "border: none; width: 0px; height: 0px;",}
   %ul.social-media-box
     %li
-      %a.share-btn{}
+      %a.share-btn
         %i.fas.fa-facebook-square
     %li
-      %a.share-btn{}
+      %a.share-btn
         %i.fas.fa-twitter-square
     %li
-      %a.share-btn{}
+      %a.share-btn
         %i.fas.fa-line
     %li
-      %a.share-btn{}
+      %a.share-btn
         %i.fas.fa-pinterest-square
 
 / バナー
