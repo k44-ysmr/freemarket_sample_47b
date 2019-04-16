@@ -1,30 +1,27 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  # You should configure your model like this:
-  # devise :omniauthable, omniauth_providers: [:twitter]
+  def facebook
+    callback_for(:facebook)
+  end
 
-  # You should also create an action method in this controller like this:
-  # def twitter
-  # end
+  def google_oauth2
+    callback_for(:google)
+  end
 
-  # More info at:
-  # https://github.com/plataformatec/devise#omniauth
+  def callback_for(provider)
+    @user = User.from_auth(request.env["omniauth.auth"])
+    logger.debug @user.errors.inspect
+    if @user.present?
+      sign_in_and_redirect @user, event: :authentication
+    else
+      session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
+      # provider_path = response["provider"].to_s.eql?("facebook") ? user_facebook_omniauth_authorize_path : user_google_oauth2_omniauth_authorize_path
+      redirect_to new_user_session_path
+    end
+  end
 
-  # GET|POST /resource/auth/twitter
-  # def passthru
-  #   super
-  # end
-
-  # GET|POST /users/auth/twitter/callback
-  # def failure
-  #   super
-  # end
-
-  # protected
-
-  # The path used when OmniAuth fails
-  # def after_omniauth_failure_path_for(scope)
-  #   super(scope)
-  # end
+  def failure
+    redirect_to new_user_session_path and return
+  end
 end
