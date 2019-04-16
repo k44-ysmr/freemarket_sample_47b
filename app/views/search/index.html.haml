@@ -1,11 +1,13 @@
 -# ページタイトル
-- content_for(:title) { 'マイページ メルカリ' }
+- content_for(:title) { 'メルカリ - 検索' }
 
 / ヘッダー
 %header.header
   = render partial: "partial/header"
 / パンくずリスト
-
+%nav.bread-container
+  - breadcrumb :root
+  = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fas fa-chevron-right')}"
 / メインコンテンツ
 %body
 .mainbox
