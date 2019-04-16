@@ -26,11 +26,10 @@ class ItemsController < ApplicationController
   end
 
   def update
-    begin
-      @item.update(trade_status: start_or_stop_displaying_params[:trade_status])
+    if @item.update(trade_status: start_or_stop_displaying_params[:trade_status])
       redirect_to item_path(@item)
-    rescue Exception => e
-      puts e
+    else
+      render :edit
     end
 
   end
