@@ -16,10 +16,34 @@ Rails 5.2.2.1
 |:-----------|------------:|:------------:|
 | nickname | string | null: false |
 | email | string | null: false, unique: true |
-| password | string | -- |
+| last_name | string | -- |
+| first_name | string | -- |
+| last_name_kana | string | -- |
+| first_name_kana | string | -- |
+| city | string | -- |
+| block | string | -- |
+| building | string | -- |
+| birth_year | integer | -- |
+| birth_month | integer | -- |
+| birth_day | integer | -- |
+| phone_number | string | -- |
+| zipcode | string | -- |
+| prefecture | integer | -- |
 
 - has_many :items
 - has_many :trading_partners
+- has_many :sns_credentials
+
+## sns_credentials TB
+
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| uid | string | null: false, unique: true |
+| provider | string | null: false |
+| token | text | -- |
+| user_id | references | null: false, index: true, foreign_key: true |
+
+- belongs_to :user
 
 ## items TB
 

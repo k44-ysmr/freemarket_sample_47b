@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     Rails.env.production?
   end
 
+  def require_signin
+    redirect_to controller: :users, action: :index unless user_signed_in?
+  end
+
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
