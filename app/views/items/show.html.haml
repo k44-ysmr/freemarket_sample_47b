@@ -97,9 +97,10 @@
       .item-none 出品停止中
     - else
       - if user_signed_in?
-        .item-buy-btn 購入画面に進む
+        = link_to '購入画面に進む', item_buys_path(@item.id), class: 'item-buy-btn'
       - else
-        .item-buy-btn 購入画面に進む
+        = link_to '購入画面に進む', new_user_session_path, class: 'item-buy-btn'
+        / .item-buy-btn 購入画面に進む
     .item-description
       %p.item-description__inner
         = @item.description
