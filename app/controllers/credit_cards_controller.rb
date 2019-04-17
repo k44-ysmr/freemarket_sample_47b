@@ -1,4 +1,5 @@
 class CreditCardsController < ApplicationController
+  before_action :authenticate_user!, only: [ :new, :create]
 
   def new
     @creditcard = CreditCard.new
