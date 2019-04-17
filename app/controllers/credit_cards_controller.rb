@@ -1,6 +1,4 @@
 class CreditCardsController < ApplicationController
-  before_action :authenticate_user!, only: [ :new, :create]
-
   def new
     @creditcard = CreditCard.new
     gon.key = PAYJP_PUBLIC_KEY
