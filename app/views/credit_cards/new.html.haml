@@ -8,13 +8,14 @@
     .l-content
       %section.l-content__container
         %h2.l-content__container__head クレジットカード情報入力
-        %form.l-single{}
-          %input{type: "hidden",}/
+        = form_with url: @creditcard, action: :pay, method: :post, class: 'l-single', id: 'charge-form' do |f|
+
           .l-single__content
             .form-group
               %label カード番号
               %span.form-group__require 必須
-              %input.input-default{placeholder: "半角数字のみ", type: "text", value: ""}/
+              = f.text_field :number, class: 'input-default', name: 'number',placeholder: "半角数字のみ", value: 4242424242424242
+              / %input.input-default.number#payment_card_no{placeholder: "半角数字のみ", type: "text", value: "", name: 'number'}/
               %ul.has-error-text
               %ul.form-group__card-list
                 %li
@@ -36,24 +37,26 @@
               %span.form-require 必須
               %br/
               .select-wrap
-                = date_select :hoge, :month, use_month_numbers: true, discard_year: true, discard_day: true
-                %i.fas.fa-chevron-down
+                = f.select :exp_month, options_for_select(01..12), name: 'exp_month'
+                / %i.fas.fa-chevron-down
               %span 月
               %ul#expire-mm-error-wrapper.has-error-text
               .select-wrap
-                = date_select :hoge, :year, use_month_numbers: true, discard_month: true, discard_day: true
-                %i.fas.fa-chevron-down
+                = f.select :exp_year,options_for_select(2019..2029) , name: 'exp_year'
+                / %i.fas.fa-chevron-down
               %span 年
               %ul#expire-yy-error-wrapper.has-error-text
             .form-group
               %label セキュリティコード
               %span.form-require 必須
-              %input#payment_card_security_code.input-default{placeholder: "カード背面4桁もしくは3桁の番号", type: "number", value: ""}/
+              = f.number_field :cvc, name: 'cvc', minlenght: 3, maxlength: 4, placeholder: "カード背面4桁もしくは3桁の番号", class: 'input-default'
+              / %input.cvc#payment_card_security_code.input-default{placeholder: "カード背面4桁もしくは3桁の番号", type: "number", value: "", name: 'cvc'}/
               %ul#security-code-error-wrapper.has-error-text
               .l-single__content__signup-seqcode
-                .l-single__content__signup-seqcode__text{"data-js": "show-tips-toggle"}
+                .l-single__content__signup-seqcode__text
                   %span.form-question> ?
                   カード裏面の番号とは？
-                .signup-seqcode-info{"data-js": "show-tips-content"}
+                .signup-seqcode-info
                   %br/
-            %button.l-single__content__btn-default{type: "button"} 追加する
+            = f.submit "追加する", class: 'l-single__content__btn-default', id: 'token-save'
+            / %button.l-single__content__btn-default#card-save{type: "button"} 追加する
