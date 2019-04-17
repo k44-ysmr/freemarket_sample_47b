@@ -51,3 +51,28 @@ crumb :mypage_identification do
   link '本人情報', identifications_path
   parent :mypage
 end
+
+crumb :item do |item|
+  link "#{item.name}", item_path(item)
+  parent :root
+end
+
+crumb :search do |query|
+  link "#{query}", search_index_path
+  parent :root
+end
+
+crumb :category do
+  link 'カテゴリー一覧', category_index_path
+  parent :root
+end
+
+crumb :brand do
+  link 'ブランド一覧', brand_index_path
+  parent :root
+end
+
+crumb :brand_show do |top|
+  link "#{brand.name}", brand_path(brand)
+  parent :brand
+end

@@ -1,17 +1,23 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
-
   before_action :set_item, only: [:show, :destroy, :update]
-
   before_action :set_prefecture, only: [:show]
 
   def index
-    @items = Item.all.includes(:user).limit(4).order("created_at DESC")
+    @ladies_items = Item.where(category_id: 1).order("created_at DESC")
+    @mens_items = Item.where(category_id: 2).order("created_at DESC")
+    @kids_items = Item.where(category_id: 3).order("created_at DESC")
+    @cosme_items = Item.where(category_id: 7).order("created_at DESC")
+    @chanel_items = Item.where(brand_id: 1).order("created_at DESC")
+    @louisvuitton_items = Item.where(brand_id: 3).order("created_at DESC")
+    @supreme_items = Item.where(brand_id: 4).order("created_at DESC")
+    @nike_items = Item.where(brand_id: 2).order("created_at DESC")
   end
 
   def new
     @item = Item.new
     @item.images.build
+    @category = Category.new
   end
 
   def create
