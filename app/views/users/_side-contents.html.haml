@@ -1,20 +1,20 @@
 .mainbox__side-box
   %a
-  = link_to do
+  = link_to user_path(current_user.id) do
     .mainbox__side-box__first-bar
       .mainbox__side-box__first-bar__text マイページ
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text お知らせ
+      .mainbox__side-box__next-bar__text お知らせ*
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text やることリスト
+      .mainbox__side-box__next-bar__text やることリスト*
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text いいね！一覧
+      .mainbox__side-box__next-bar__text いいね！一覧*
       %i1.fa.fa-chevron-right
   = link_to new_item_path do
     .mainbox__side-box__next-bar
@@ -42,47 +42,47 @@
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text ニュース一覧
+      .mainbox__side-box__next-bar__text ニュース一覧*
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text 評価一覧
+      .mainbox__side-box__next-bar__text 評価一覧*
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text ガイド
+      .mainbox__side-box__next-bar__text ガイド*
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text お問い合わせ
+      .mainbox__side-box__next-bar__text お問い合わせ*
       %i1.fa.fa-chevron-right
 
-  .mainbox__side-box__text メルペイ
+  .mainbox__side-box__text メルペイ*
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text 売上・振込申請
+      .mainbox__side-box__next-bar__text 売上・振込申請*
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text ポイント
+      .mainbox__side-box__next-bar__text ポイント*
       %i1.fa.fa-chevron-right
 
   .mainbox__side-box__text 設定
-  = link_to '/users/show/profile' do
+  = link_to user_profile_path(current_user.id) do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text プロフィール
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text 発送元・お届け先住所変更
+      .mainbox__side-box__next-bar__text 発送元・お届け先住所変更*
       %i1.fa.fa-chevron-right
-  = link_to do
+  = link_to new_credit_card_path do
     .mainbox__side-box__next-bar
       .mainbox__side-box__next-bar__text 支払い方法
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text メール/パスワード
+      .mainbox__side-box__next-bar__text メール/パスワード*
       %i1.fa.fa-chevron-right
   = link_to identifications_path do
     .mainbox__side-box__next-bar
@@ -90,7 +90,7 @@
       %i1.fa.fa-chevron-right
   = link_to do
     .mainbox__side-box__next-bar
-      .mainbox__side-box__next-bar__text 電話番号の確認
+      .mainbox__side-box__next-bar__text 電話番号の確認*
       %i1.fa.fa-chevron-right
   = link_to logouts_path do
     .mainbox__side-box__next-bar

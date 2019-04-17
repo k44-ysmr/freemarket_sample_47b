@@ -156,7 +156,18 @@ body {
         font-size: 16px;
       }
     }
-
+    .item-none {
+      cursor: not-allowed;
+      height: 60px;
+      line-height: 60px;
+      display: block;
+      margin: 16px 0 0;
+      background-color: $gray-black;
+      color: $white;
+      text-align: center;
+      font-weight: 600;
+      font-size: 24px;
+    }
     .item-buy-btn {
       cursor: not-allowed;
       height: 60px;
@@ -383,29 +394,31 @@ body {
   margin: 24px auto 0;
   width: 700px;
   height: 28px;
-  &__prev {
-    width: 45%;
-    position: relative;
-    word-wrap: break-word;
-    float: left;
-    padding: 0 0 0 14px;
-    a {
-      color: $light-blue;
-      text-decoration: none;
+
+    &__prev {
+      width: 45%;
+      position: relative;
+      word-wrap: break-word;
+      float: left;
+      padding: 0 0 0 14px;
+      a {
+        color: $light-blue;
+        text-decoration: none;
+      }
     }
-  }
-  &__next {
-    width: 45%;
-    position: relative;
-    word-wrap: break-word;
-    float: right;
-    padding: 0 14px 0 0;
-    text-align: right;
-    a {
-      color: $light-blue;
-      text-decoration: none;
+
+    &__next {
+      width: 45%;
+      position: relative;
+      word-wrap: break-word;
+      float: right;
+      padding: 0 14px 0 0;
+      text-align: right;
+      a {
+        color: $light-blue;
+        text-decoration: none;
+      }
     }
-  }
 }
 
 .item-social-media-box {
