@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :trading_partners
+  has_many :credit_cards
   has_many :sns_credentials, dependent: :destroy
 
   # validates :nickname,
