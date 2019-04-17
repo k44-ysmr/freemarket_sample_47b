@@ -12,14 +12,10 @@ class BuysController < ApplicationController
           Payjp.api_key = PAYJP_SECRET_KEY
           customer_id =@credit_card.customer_id
           Payjp::Charge.create(currency: 'jpy', amount: @item.price, customer: customer_id)
-          create_purchase_history(@item)
-          # 本家の購入確認後のページの確認ができないため仮置きでrootページを表示
-          redirect_to root_path
-      else
-          create_purchase_history(@item)
-          # 本家の購入確認後のページの確認ができないため仮置きでrootページを表示
-          redirect_to root_path
       end
+      create_purchase_history(@item)
+      # 本家の購入確認後のページの確認ができないため仮置きでrootページを表示
+      redirect_to root_path
     else
       # 本家の購入確認後のページの確認ができないため仮置きで商品購入ページを再表示
       redirect_to item_buys_path
