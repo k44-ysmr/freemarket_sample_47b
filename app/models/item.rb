@@ -21,6 +21,6 @@ class Item < ApplicationRecord
   enum days_before_shipping: { two_days: 1, four_days: 2, seven_days: 3}
 
   def self.set_index(id)
-    Item.where(id).order("created_at DESC")
+    Item.where(id).limit(4).order("created_at DESC")
   end
 end
