@@ -78,15 +78,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-    def trade_status_update
-      params.permit(:trade_status)
-    end
+  def trade_status_update
+    params.permit(:trade_status)
   end
   def set_prefecture
     @prefecture = Prefecture.find(@item.prefecture_id)
   end
-
-  def start_or_stop_displaying_params
-    params.permit(:trade_status)
   end
-end
