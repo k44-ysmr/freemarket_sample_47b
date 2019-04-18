@@ -6,7 +6,7 @@
   = render partial: "partial/header"
 / パンくずリスト
 %nav.bread-container
-  - breadcrumb :root
+  - breadcrumb :search, @keyword
   = breadcrumbs separator: "#{content_tag(:i, '', class: 'fas fa-chevron-right')}"
 / メインコンテンツ
 %body
