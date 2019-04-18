@@ -39,7 +39,7 @@
               = link_to 'ブランド一覧', class: 'level-1__list__item'
     .header__container__bottom__user
       - if user_signed_in?
-        = link_to '#', class: 'header__container__bottom__user__mypage' do
+        = link_to user_path(current_user.id), class: 'header__container__bottom__user__mypage' do
           = image_tag 'common/user-icon.png', alt: 'icon', class: 'header__container__bottom__user__mypage__icon', height: '32', width: '32'
           %span マイページ
         = link_to '#', class: 'header__container__bottom__user__todo' do

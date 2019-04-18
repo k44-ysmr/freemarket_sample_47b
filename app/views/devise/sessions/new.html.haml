@@ -9,10 +9,10 @@
       =link_to '新規会員登録', users_path, class: 'devise-main__session__registration__link'
 
     .devise-main__session__omniauth
-      = link_to '', class: 'devise-main__session__omniauth__facebook' do
+      = link_to user_facebook_omniauth_authorize_path, class: 'devise-main__session__omniauth__facebook' do
         %i.fab.fa-facebook
         Facebookでログイン
-      = link_to '', class: 'devise-main__session__omniauth__google' do
+      = link_to user_google_oauth2_omniauth_authorize_path, class: 'devise-main__session__omniauth__google' do
         %i.fab.fa-google-plus-g
         Googleでログイン
 

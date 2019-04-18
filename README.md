@@ -90,6 +90,7 @@ Rails 5.2.2.1
 | Column | Type | Options |
 |:-----------|------------:|:------------:|
 | name | string | null: false, unique: true |
+| parent_id | integer | -- |
 
 - has_many :items
 

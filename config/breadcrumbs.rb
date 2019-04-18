@@ -3,31 +3,51 @@ crumb :root do
 end
 
 crumb :mypage do
-  link 'マイページ', user_path
+  link 'マイページ', user_path(current_user.id)
   parent :root
 end
 
-# crumb :projects do
-#   link "Projects", projects_path
-# end
+crumb :mypage_logout do
+  link 'ログアウト', logouts_path
+  parent :mypage
+end
 
-# crumb :project do |project|
-#   link project.name, project_path(project)
-#   parent :projects
-# end
+crumb :mypage_listing do
+  link '出品した商品-出品中', listings_path
+  parent :mypage
+end
 
-# crumb :project_issues do |project|
-#   link "Issues", project_issues_path(project)
-#   parent :project, project
-# end
+crumb :mypage_progression do
+  link '出品した商品-取引中', progressions_path
+  parent :mypage
+end
 
-# crumb :issue do |issue|
-#   link issue.title, issue_path(issue)
-#   parent :project_issues, issue.project
-# end
+crumb :mypage_completion do
+  link '出品した商品-売却済', completions_path
+  parent :mypage
+end
 
-# If you want to split your breadcrumbs configuration over multiple files, you
-# can create a folder named `config/breadcrumbs` and put your configuration
-# files there. All *.rb files (e.g. `frontend.rb` or `products.rb`) in that
-# folder are loaded and reloaded automatically when you change them, just like
-# this file (`config/breadcrumbs.rb`).
+crumb :mypage_purchase do
+  link '購入した商品-取引中', purchases_path
+  parent :mypage
+end
+
+crumb :mypage_purchased do
+  link '出品した商品-過去の取引', purchased_index_path
+  parent :mypage
+end
+
+crumb :mypage_profile do
+  link 'プロフィール', user_profile_path
+  parent :mypage
+end
+
+crumb :mypage_credit_card do
+  link '支払い方法', new_credit_card_path
+  parent :mypage
+end
+
+crumb :mypage_identification do
+  link '本人情報', identifications_path
+  parent :mypage
+end
