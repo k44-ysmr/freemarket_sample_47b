@@ -4,14 +4,14 @@ class ItemsController < ApplicationController
   before_action :set_prefecture, only: [:show]
 
   def index
-    @ladies_items = set_index(category_id: 1)
-    @mens_items = set_index(category_id: 2)
-    @kids_items = set_index(category_id: 3)
-    @cosme_items = set_index(category_id: 7)
-    @chanel_items = set_index(brand_id: 1)
-    @louisvuitton_items = set_index(brand_id: 3)
-    @supreme_items = set_index(brand_id: 4)
-    @nike_items = set_index(brand_id: 2)
+    @ladies_items = Item.set_index(category_id: 1)
+    @mens_items = Item.set_index(category_id: 2)
+    @kids_items = Item.set_index(category_id: 3)
+    @cosme_items = Item.set_index(category_id: 7)
+    @chanel_items = Item.set_index(brand_id: 1)
+    @louisvuitton_items = Item.set_index(brand_id: 3)
+    @supreme_items = Item.set_index(brand_id: 4)
+    @nike_items = Item.set_index(brand_id: 2)
   end
 
   def new
@@ -66,9 +66,5 @@ class ItemsController < ApplicationController
 
   def start_or_stop_displaying_params
     params.permit(:trade_status)
-  end
-
-  def set_index(id)
-    Item.where(id).order("created_at DESC")
   end
 end
