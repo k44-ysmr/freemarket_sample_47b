@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_15_070312) do
+ActiveRecord::Schema.define(version: 2019_04_17_084351) do
 
   create_table "brand_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2019_04_15_070312) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "parent_id"
+    t.integer "grandparent_id"
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -47,6 +49,18 @@ ActiveRecord::Schema.define(version: 2019_04_15_070312) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
+  create_table "installs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_installs_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -97,6 +111,16 @@ ActiveRecord::Schema.define(version: 2019_04_15_070312) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "uid", null: false
+    t.string "provider", null: false
+    t.text "token"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "trading_partners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "buyer_id", null: false
     t.bigint "seller_id", null: false
@@ -115,6 +139,19 @@ ActiveRecord::Schema.define(version: 2019_04_15_070312) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "last_name"
+    t.string "first_name"
+    t.string "last_name_kana"
+    t.string "first_name_kana"
+    t.string "city"
+    t.string "block"
+    t.string "building"
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_day"
+    t.string "phone_number"
+    t.string "zipcode"
+    t.integer "prefecture"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["nickname"], name: "index_users_on_nickname"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -131,6 +168,7 @@ ActiveRecord::Schema.define(version: 2019_04_15_070312) do
   add_foreign_key "orders", "trading_partners"
   add_foreign_key "size_charts", "categories"
   add_foreign_key "size_charts", "sizes"
+  add_foreign_key "sns_credentials", "users"
   add_foreign_key "trading_partners", "users", column: "buyer_id"
   add_foreign_key "trading_partners", "users", column: "seller_id"
 end

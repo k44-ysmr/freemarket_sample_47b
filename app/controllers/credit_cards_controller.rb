@@ -8,6 +8,7 @@ class CreditCardsController < ApplicationController
     Payjp.api_key = PAYJP_SECRET_KEY
     customer = Payjp::Customer.create(card: params[:card_id])
     card = CreditCard.new(card_id: params[:card_id],customer_id: customer.id,user_id: current_user.id)
+    binding.pry
     if card.save
       redirect_to root_path
     else

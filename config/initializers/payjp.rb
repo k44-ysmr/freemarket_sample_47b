@@ -1,4 +1,4 @@
 require 'payjp'
 
-PAYJP_PUBLIC_KEY = ENV["PAYJP_PUBLIC_KEY"]
-PAYJP_SECRET_KEY = ENV["PAYJP_SECRET_KEY"]
+PAYJP_PUBLIC_KEY = Rails.application.credentials.payjp[:key]
+PAYJP_SECRET_KEY = Rails.application.credentials.payjp[:secret]
