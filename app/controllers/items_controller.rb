@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(trade_status: start_or_stop_displaying_params[:trade_status])
+    if @item.update(trade_status: trade_status_update[:trade_status])
       redirect_to item_path(@item)
     else
       render :edit
@@ -55,11 +55,6 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       # 画像が編集されなかった時はもう一度編集画面に遷移させる
       @image = Image.find_by(item_id: @item.id)
-      if @item.images.first.present?
-        redirect_to root_path
-      else
-        render action: :edit
-      end
     else
       render action: :edit
     end
@@ -83,7 +78,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-    def start_or_stop_displaying_params
+    def trade_status_update
       params.permit(:trade_status)
     end
   end
