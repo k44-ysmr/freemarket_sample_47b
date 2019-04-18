@@ -4,14 +4,14 @@ class ItemsController < ApplicationController
   before_action :set_prefecture, only: [:show]
 
   def index
-    @ladies_items = Item.where(category_id: 1).order("created_at DESC")
-    @mens_items = Item.where(category_id: 2).order("created_at DESC")
-    @kids_items = Item.where(category_id: 3).order("created_at DESC")
-    @cosme_items = Item.where(category_id: 7).order("created_at DESC")
-    @chanel_items = Item.where(brand_id: 1).order("created_at DESC")
-    @louisvuitton_items = Item.where(brand_id: 3).order("created_at DESC")
-    @supreme_items = Item.where(brand_id: 4).order("created_at DESC")
-    @nike_items = Item.where(brand_id: 2).order("created_at DESC")
+    @ladies_items = set_index(category_id: 1)
+    @mens_items = set_index(category_id: 2)
+    @kids_items = set_index(category_id: 3)
+    @cosme_items = set_index(category_id: 7)
+    @chanel_items = set_index(brand_id: 1)
+    @louisvuitton_items = set_index(brand_id: 3)
+    @supreme_items = set_index(brand_id: 4)
+    @nike_items = set_index(brand_id: 2)
   end
 
   def new
@@ -52,20 +52,23 @@ class ItemsController < ApplicationController
 
   private
 
-    def item_params
-      params.require(:item).permit(:name, :description,:price,:condition,:shipping_fee,:days_before_shipping,:shipping_method,:trade_status,:prefecture_id,:brand_id,:category_id,:size_id,images_attributes: [:id,:name]).merge(user_id: current_user.id)
-    end
+  def item_params
+    params.require(:item).permit(:name, :description,:price,:condition,:shipping_fee,:days_before_shipping,:shipping_method,:trade_status,:prefecture_id,:brand_id,:category_id,:size_id,images_attributes: [:id,:name]).merge(user_id: current_user.id)
+  end
 
-    def set_item
-      @item = Item.find(params[:id])
-    end
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
-    def set_prefecture
-      @prefecture = Prefecture.find(@item.prefecture_id)
-    end
+  def set_prefecture
+    @prefecture = Prefecture.find(@item.prefecture_id)
+  end
 
-    def start_or_stop_displaying_params
-      params.permit(:trade_status)
-    end
+  def start_or_stop_displaying_params
+    params.permit(:trade_status)
+  end
 
+  def set_index(id)
+    Item.where(id).order("created_at DESC")
+  end
 end
