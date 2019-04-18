@@ -8,7 +8,7 @@
       %section.sell-main__container
         .sell-main__inner
           %h2.form-title 商品の情報を入力
-          = form_for @item, url: {action: 'itemupdate' }, html: { class: "sell-form" } do |f|
+          = form_for @item, url: {action: 'infoupdate' }, html: { class: "sell-form" } do |f|
             .sell-form__upload
               %h3.sell-form__upload__head
                 出品画像

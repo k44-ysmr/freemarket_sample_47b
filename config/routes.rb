@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :buys
   end
-  patch '/items/:id/itemupdate' => 'items#itemupdate'
+  patch '/items/:id/infoupdate' => 'items#infoupdate'
   resources :credit_card
   resources :credit_cards
 
