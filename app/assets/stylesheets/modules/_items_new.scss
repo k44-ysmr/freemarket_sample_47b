@@ -39,6 +39,20 @@
               display: block;
               width: 620px;
             }
+            &__preview {
+              margin: 20px 15px 0 0;
+              width: 116px;
+              height: 162px;
+              background-color: blue;
+              &__image {
+                width: 100%;
+                height: 162px;
+              }
+            }
+            &__dropboxedit{
+              display: block;
+              width: 489px;
+            }
             &__dropitem{
               position: relative;
               min-height: 162px;
@@ -49,6 +63,16 @@
               width: 100%;
               padding: 40px;
               margin-top: 20px;
+              &__editprev {
+                background-color: blue;
+                float: left;
+                flex: 1;
+                width: 116px;
+                margin: 20px 15px 0px 0px;
+                display: inline-block;
+                margin-left: 0;
+                min-height: 116px;
+              }
               &__file{
               visibility:hidden;
               }

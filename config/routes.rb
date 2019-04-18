@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :buys
   end
+  patch '/items/:id/itemupdate' => 'items#itemupdate'
   resources :credit_card
 
   resources :identifications, only: [:index]

@@ -20,9 +20,29 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
+  end
+
+  def itemupdate
+    @item = Item.find(params[:id])
+    # 下記の条件分岐によってrenderされた時はelseを通るようにする
+    if @item.images.present?
+      @image = Image.find_by(item_id: @item.id)
+      @image.destroy
+      @item.update(item_params)
+    else
+      @item.update(item_params)
+    end
+    # 画像が編集されなかった時はもう一度編集画面に遷移させる
+    @image = Image.find_by(item_id: @item.id)
+    if @image.present?
+      redirect_to root_path
+    else
+      render action: :edit
+    end
   end
 
   def destroy
