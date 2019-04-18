@@ -12,9 +12,11 @@ Rails.application.routes.draw do
     get 'profile'
   end
   resources :items do
+    member do
+      patch 'info_update'
+    end
     resources :buys
   end
-  patch '/items/:id/infoupdate' => 'items#infoupdate'
   resources :credit_card
   resources :credit_cards
 

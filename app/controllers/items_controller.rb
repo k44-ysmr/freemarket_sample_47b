@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
-  before_action :set_item, only: [:show, :edit, :destroy, :update, :infoupdate]
+  before_action :set_item, only: [:show, :edit, :destroy, :update, :info_update]
 
   before_action :set_prefecture, only: [:show]
 
@@ -36,8 +36,16 @@ class ItemsController < ApplicationController
 
   end
 
-  def infoupdate
-    set_image
+  def info_update
+  # 条件分岐によってrenderされた時はelseを通るようにする
+    if @item.images.first.present?
+      @image = Image.find_by(item_id: @item.id)
+      if @image.destroy
+      else
+        render action: :edit
+      end
+    else
+    end
     if @item.update(item_params)
       # 画像が編集されなかった時はもう一度編集画面に遷移させる
       @image = Image.find_by(item_id: @item.id)
@@ -76,17 +84,4 @@ class ItemsController < ApplicationController
     def start_or_stop_displaying_params
       params.permit(:trade_status)
     end
-
-    def set_image
-    # 条件分岐によってrenderされた時はelseを通るようにする
-      if @item.images.first.present?
-        @image = Image.find_by(item_id: @item.id)
-        if @image.destroy
-        else
-          render action: :edit
-        end
-      else
-      end
-    end
-
-end
+  end
