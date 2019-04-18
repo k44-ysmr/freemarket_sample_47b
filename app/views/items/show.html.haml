@@ -2,7 +2,9 @@
 %header.header
   = render partial: "partial/header"
 / パンくずリスト
-/ バナースライド
+%nav.bread-container
+  - breadcrumb :item, @item
+  = breadcrumbs separator: "#{content_tag(:i, '', class: 'fas fa-chevron-right')}"
 
 
 %section.item-box-cotainer
@@ -44,20 +46,18 @@
           %th カテゴリー
           %td
             %a{:href => ""}
-              %div メンズ
+              = @item.category.name
             %a{:href => ""}
               .item-detail-table__sub-category
                 %i.fas.fa-chevron-right
-                シューズ
             %a{:href => ""}
               .item-detail-table-sub-sub-category
                 %i.fas.fa-chevron-right
-                シューズ
         %tr
           %th ブランド
           %td
             %a{:href => ""}
-              %div SUGOI
+              = @item.brand.name
         %tr
           %th 商品の状態
           %td

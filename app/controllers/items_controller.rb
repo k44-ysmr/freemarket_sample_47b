@@ -1,17 +1,23 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
-
   before_action :set_item, only: [:show, :edit, :destroy, :update, :info_update]
-
   before_action :set_prefecture, only: [:show]
 
   def index
-    @items = Item.all.includes(:user).limit(4).order("created_at DESC")
+    @ladies_items = Item.set_index(category_id: 1)
+    @mens_items = Item.set_index(category_id: 2)
+    @kids_items = Item.set_index(category_id: 3)
+    @cosme_items = Item.set_index(category_id: 7)
+    @chanel_items = Item.set_index(brand_id: 1)
+    @louisvuitton_items = Item.set_index(brand_id: 3)
+    @supreme_items = Item.set_index(brand_id: 4)
+    @nike_items = Item.set_index(brand_id: 2)
   end
 
   def new
     @item = Item.new
     @item.images.build
+    @category = Category.new
   end
 
   def create
@@ -69,19 +75,23 @@ class ItemsController < ApplicationController
 
   private
 
-    def item_params
-      params.require(:item).permit(:name, :description,:price,:condition,:shipping_fee,:days_before_shipping,:shipping_method,:trade_status,:prefecture_id,:brand_id,:category_id,:size_id,images_attributes: [:id,:name]).merge(user_id: current_user.id)
-    end
+  def item_params
+    params.require(:item).permit(:name, :description,:price,:condition,:shipping_fee,:days_before_shipping,:shipping_method,:trade_status,:prefecture_id,:brand_id,:category_id,:size_id,images_attributes: [:id,:name]).merge(user_id: current_user.id)
+  end
 
-    def set_item
-      @item = Item.find(params[:id])
-    end
-
-    def set_prefecture
-      @prefecture = Prefecture.find(@item.prefecture_id)
-    end
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
     def start_or_stop_displaying_params
       params.permit(:trade_status)
     end
   end
+  def set_prefecture
+    @prefecture = Prefecture.find(@item.prefecture_id)
+  end
+
+  def start_or_stop_displaying_params
+    params.permit(:trade_status)
+  end
+end

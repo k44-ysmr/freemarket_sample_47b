@@ -7,7 +7,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin18]
 Rails 5.2.2.1
 
 # Development Period
-2019/03/27-04/20
+2019/03/27-04/19
 
 # Database
 ## users TB
@@ -33,6 +33,7 @@ Rails 5.2.2.1
 - has_many :items
 - has_many :trading_partners
 - has_many :sns_credentials
+- has_many :credit_cards
 
 ## sns_credentials TB
 
@@ -41,6 +42,16 @@ Rails 5.2.2.1
 | uid | string | null: false, unique: true |
 | provider | string | null: false |
 | token | text | -- |
+| user_id | references | null: false, index: true, foreign_key: true |
+
+- belongs_to :user
+
+## credit_cards TB
+
+| Column | Type | Options |
+|:-----------|------------:|:------------:|
+| card_id | string | -- |
+| customer_id | string | -- |
 | user_id | references | null: false, index: true, foreign_key: true |
 
 - belongs_to :user

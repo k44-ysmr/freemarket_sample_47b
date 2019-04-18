@@ -28,4 +28,6 @@ Rails.application.routes.draw do
   resources :purchases, only: [:index]
   resources :purchased, only: [:index]
   resources :search, only: [:index]
+  resources :category, only: [:index, :show]
+  resources :brand, only: [:index, :show]
 end
