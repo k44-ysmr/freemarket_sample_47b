@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users,
     controllers: {
+      omniauth_callbacks: 'users/omniauth_callbacks',
       registrations:      'users/registrations',
       sessions:      'users/sessions'
     }
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   end
   patch '/items/:id/itemupdate' => 'items#itemupdate'
   resources :credit_card
+  resources :credit_cards
 
   resources :identifications, only: [:index]
   resources :logouts, only: [:index]
@@ -24,5 +26,4 @@ Rails.application.routes.draw do
   resources :purchases, only: [:index]
   resources :purchased, only: [:index]
   resources :search, only: [:index]
-
 end
