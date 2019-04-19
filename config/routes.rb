@@ -12,8 +12,12 @@ Rails.application.routes.draw do
     get 'profile'
   end
   resources :items do
+    member do
+      patch 'info_update'
+    end
     resources :buys
   end
+  resources :credit_card
   resources :credit_cards
 
   resources :identifications, only: [:index]

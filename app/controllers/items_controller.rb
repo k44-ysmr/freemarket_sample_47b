@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
-  before_action :set_item, only: [:show, :destroy, :update]
+  before_action :set_item, only: [:show, :edit, :destroy, :update, :info_update]
   before_action :set_prefecture, only: [:show]
 
   def index
@@ -34,12 +34,23 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(trade_status: start_or_stop_displaying_params[:trade_status])
+    if @item.update(trade_status: trade_status_update[:trade_status])
       redirect_to item_path(@item)
     else
       render :edit
     end
 
+  end
+
+  def info_update
+      @image = Image.find_by(item_id: @item.id)
+    begin
+      @image.destroy
+      @item.update(item_params)
+    rescue
+      render action: :edit and return
+    end
+    redirect_to root_path
   end
 
   def destroy
@@ -60,11 +71,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def trade_status_update
+    params.permit(:trade_status)
+  end
   def set_prefecture
     @prefecture = Prefecture.find(@item.prefecture_id)
   end
-
-  def start_or_stop_displaying_params
-    params.permit(:trade_status)
   end
-end
