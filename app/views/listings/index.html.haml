@@ -25,7 +25,7 @@
           .mainbox__listing-box__menu__side 売却済み
       - if @items.present?
         - @items.each do |item|
-          = link_to do
+          = link_to item_path(item.id) do
             .mainbox__listing-box__item-tab__box
               = image_tag item.images.first.name.url, class: 'mainbox__listing-box__item-tab__box__icon'
               .mainbox__listing-box__item-tab__box__info= item.name
