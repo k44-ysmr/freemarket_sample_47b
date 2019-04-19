@@ -43,21 +43,14 @@ class ItemsController < ApplicationController
   end
 
   def info_update
-  # 条件分岐によってrenderされた時はelseを通るようにする
-    if @item.images.first.present?
       @image = Image.find_by(item_id: @item.id)
-      if @image.destroy
-      else
-        render action: :edit
-      end
-    else
+    begin
+      @image.destroy
+      @item.update(item_params)
+    rescue
+      render action: :edit and return
     end
-    if @item.update(item_params)
-      # 画像が編集されなかった時はもう一度編集画面に遷移させる
-      @image = Image.find_by(item_id: @item.id)
-    else
-      render action: :edit
-    end
+    redirect_to root_path
   end
 
   def destroy
