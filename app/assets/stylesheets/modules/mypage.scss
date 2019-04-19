@@ -16,6 +16,9 @@
       background-color: white;
       font-weight: bold;
       display: flex;
+      &:hover {
+        background-color: $gray-hover;
+      }
     }
 
 // 他のページへのリンク
