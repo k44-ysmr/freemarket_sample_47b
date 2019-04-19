@@ -1,6 +1,6 @@
 = link_to item_path(item.id), class: 'card' do
   .card__photo
-    = image_tag item.images.first.name.url, alt: '商品画像'
+    = item.images.present? ? (image_tag item.images.first.name.url, alt: '商品画像') : (image_tag 'common/no_image.png', alt: '画像がありません')
   .card__body
     %h3.card__body__head= item.name
     .card__body__content
