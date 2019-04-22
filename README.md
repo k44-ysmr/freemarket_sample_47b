@@ -13,12 +13,12 @@ FS47b is Melcari clone app created by Tech Expert 47b(Contributors)
 - 商品検索機能(Ransack gem)
 
 # Requirement
-ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin18]
-Rails 5.2.2.1
+- ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin18]
+- Rails 5.2.2.1
 
 # Development Period
-2019/03/27-04/19 team
-4/21- 
+- 2019/03/27-04/19 team
+- 4/21- 
 
 # Database
 ## users TB
