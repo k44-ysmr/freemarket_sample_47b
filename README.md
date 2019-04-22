@@ -5,12 +5,12 @@ writer yotuba088
 FS47b is Melcari clone app created by Tech Expert 47b(Contributors)
 
 # Features
-ユーザー新規登録・ログイン機能・SNS連携(omnioauth gem)
-商品出品・購入・編集
-カテゴリー・ブランド機能
-クレジットカード登録・利用購入(payjp)
-マイページ機能・編集
-商品検索機能(Ransack gem)
+- ユーザー新規登録・ログイン機能・SNS連携(omnioauth gem)
+- 商品出品・購入・編集
+- カテゴリー・ブランド機能
+- クレジットカード登録・利用購入(payjp)
+- マイページ機能・編集
+- 商品検索機能(Ransack gem)
 
 # Requirement
 ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin18]
