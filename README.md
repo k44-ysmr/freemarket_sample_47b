@@ -3,7 +3,6 @@ http://13.113.69.245/
 Basic認証: admin/47b
 
 ## Description(まとめ)
-FS47b is Melcari clone app created by Tech Expert 47b(Contributors)
 メルカリのサイトをクローンしたポートフォリオです。
 
 ## Features（機能一覧）
