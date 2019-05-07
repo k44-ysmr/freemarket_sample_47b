@@ -1,11 +1,12 @@
+# README
 http://13.113.69.245/
 Basic認証: admin/47b
 
-# Description(まとめ)
+## Description(まとめ)
 FS47b is Melcari clone app created by Tech Expert 47b(Contributors)
 メルカリのサイトをクローンしたポートフォリオです。
 
-# Features（機能一覧）
+## Features（機能一覧）
 - ユーザー新規登録・ログイン機能・SNS連携(omnioauth gem)
 - 商品出品・購入・編集
 - カテゴリー・ブランド機能
@@ -13,14 +14,14 @@ FS47b is Melcari clone app created by Tech Expert 47b(Contributors)
 - マイページ機能・編集
 - 商品検索機能(Ransack gem)
 
-# Requirement(技術一覧)
+## Requirement(技術一覧)
 - Ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin18]
 - Rails 5.2.2.1
 - Haml/Scss/Javascript/Jquery
 - AWS/Unicorn/Nginx/Mysql/Capistrano
 - Github/Trello/Slack
 
-# Development Period（開発期間）
+## Development Period（開発期間）
 - 2019/03/27-04/19 team
 
 # Database
