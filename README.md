@@ -1,7 +1,4 @@
 # README
-http://13.113.69.245/
-Basic認証: admin/47b
-
 ## Description(まとめ)
 メルカリのサイトをクローンしたポートフォリオです。
 
